@@ -1,0 +1,57 @@
+# FootballLeagueManagement
+The project has 2 types of users: manager and normal user
+
+- **Role of the user:**
+    - Normal users: can go only to **Normal** form that contains all form in **Form for normal users** .
+    - Managers: can go to **Management** form and **Normal** form.
+        - Club manager: has permission to go Club form, Player form in **Forms for managers**.
+        - Match manager: has permission to go Match form, Score, Referee form in **Forms for managers.**
+- **Forms in the project:**
+    - General forms:
+        - Login:
+            - Purpose of use: login to the application.
+            - Function: filter roles and log in.
+        - **Management**:
+            - Purpose of use: Contain all forms in **Forms for managers**
+            - Function: Redirect the user to the form if the user has permission
+        - **Normal**:
+            - Purpose of use: Contain all forms in **Form for normal users**.
+            - Function: Redirect the user to the form if the user has permission
+    - **Forms for managers**:
+        - Club:
+            - Purpose of use: manage the information of the club in the form.
+            - Function: add, edit, delete, update the information.
+            - **Note**: Can fill the data or enter it manually.
+        - Player:
+            - Purpose of use: manage the information of players in the form.
+            - Function: add, edit, delete, update the information.
+            - **Note**: Can fill the data or enter it manually.
+        - Match:
+            - Purpose of use: manage the information of match in the form.
+            - Function: add, edit, delete, update the information.
+            - **Note**: Fill in the data manually. Match 1 club with the rest and repeat the same with the other club.
+        - Score:
+            - Purpose of use: manage the information of score in the form.
+            - Function: add, edit, delete, update the information.
+            - **Note:** Fill in the data manually.
+        - Referee:
+            - Purpose of use: manage the information of the referee in the form.
+            - Function: add, edit, delete, update the information.
+            - **Note:** Fill in the data manually.
+    - **Form for normal users**:
+        - Club:
+            - Purpose of use: Show the information in the club form.
+            - Function: search for the information.
+        - Player:
+            - Purpose of use: Show the information in the player form.
+            - Function: search for the information.
+        - Match:
+            - Purpose of use: Show the information in the schedule form.
+            - Function: search for the information.
+        - Match detail:
+            - Purpose of use: Show the score between 2 clubs in the match detail form.
+            - Function: search for the information
+        - Rank:
+            - Purpose of use: Show the information in the rank form.
+            - Function: Show the rank of the club.
+            - **Note:** update rank automatically by using a trigger on the Scores table
