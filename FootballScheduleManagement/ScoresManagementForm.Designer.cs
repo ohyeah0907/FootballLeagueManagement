@@ -66,7 +66,7 @@ namespace FootballScheduleManagement
             this.label8.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label8.Location = new System.Drawing.Point(584, 254);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(55, 17);
+            this.label8.Size = new System.Drawing.Size(58, 18);
             this.label8.TabIndex = 106;
             this.label8.Text = "Minute:";
             // 
@@ -84,7 +84,7 @@ namespace FootballScheduleManagement
             this.label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label7.Location = new System.Drawing.Point(55, 253);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(68, 17);
+            this.label7.Size = new System.Drawing.Size(73, 18);
             this.label7.TabIndex = 104;
             this.label7.Text = "Own goal:";
             // 
@@ -102,7 +102,7 @@ namespace FootballScheduleManagement
             this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label3.Location = new System.Drawing.Point(55, 98);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(24, 17);
+            this.label3.Size = new System.Drawing.Size(24, 18);
             this.label3.TabIndex = 100;
             this.label3.Text = "Id:";
             // 
@@ -197,7 +197,7 @@ namespace FootballScheduleManagement
             this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label4.Location = new System.Drawing.Point(55, 176);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(40, 17);
+            this.label4.Size = new System.Drawing.Size(42, 18);
             this.label4.TabIndex = 89;
             this.label4.Text = "Club:";
             // 
@@ -207,6 +207,7 @@ namespace FootballScheduleManagement
             this.txtMatchId.Name = "txtMatchId";
             this.txtMatchId.Size = new System.Drawing.Size(287, 28);
             this.txtMatchId.TabIndex = 88;
+            this.txtMatchId.TextChanged += new System.EventHandler(this.txtMatchId_TextChanged);
             // 
             // label2
             // 
@@ -215,7 +216,7 @@ namespace FootballScheduleManagement
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label2.Location = new System.Drawing.Point(584, 97);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 17);
+            this.label2.Size = new System.Drawing.Size(69, 18);
             this.label2.TabIndex = 87;
             this.label2.Text = "Match id:";
             // 
@@ -238,6 +239,7 @@ namespace FootballScheduleManagement
             this.cboClub.Name = "cboClub";
             this.cboClub.Size = new System.Drawing.Size(274, 25);
             this.cboClub.TabIndex = 108;
+            this.cboClub.SelectionChangeCommitted += new System.EventHandler(this.cboClub_SelectionChangeCommitted);
             // 
             // label5
             // 
@@ -246,7 +248,7 @@ namespace FootballScheduleManagement
             this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label5.Location = new System.Drawing.Point(584, 176);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 17);
+            this.label5.Size = new System.Drawing.Size(53, 18);
             this.label5.TabIndex = 109;
             this.label5.Text = "Player:";
             // 

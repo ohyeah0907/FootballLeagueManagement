@@ -35,11 +35,11 @@ namespace FootballScheduleManagement.Model.Forms
         {
             string sql = "INSERT INTO Scores(playerId, matchId, clubId, ownGoal, minute) VALUES(@playerId, @matchId, @clubId, @ownGoal, @minute)";
             sqlCommand.CommandText = sql;
-            sqlCommand.Parameters.Add("@playerId", SqlDbType.Int).Value = playerId;
-            sqlCommand.Parameters.Add("@matchId", SqlDbType.Int).Value = matchId;
-            sqlCommand.Parameters.Add("@clubId", SqlDbType.Int).Value = clubId;
-            sqlCommand.Parameters.Add("@ownGoal", SqlDbType.Int).Value = ownGoal;
-            sqlCommand.Parameters.Add("@minute", SqlDbType.Int).Value = minute;
+            sqlCommand.Parameters.Add("@playerId", SqlDbType.Int).Value = Convert.ToInt32(playerId);
+            sqlCommand.Parameters.Add("@matchId", SqlDbType.Int).Value = Convert.ToInt32(matchId);
+            sqlCommand.Parameters.Add("@clubId", SqlDbType.Int).Value = Convert.ToInt32(clubId);
+            sqlCommand.Parameters.Add("@ownGoal", SqlDbType.Int).Value = Convert.ToInt32(ownGoal);
+            sqlCommand.Parameters.Add("@minute", SqlDbType.Int).Value = Convert.ToInt32(minute);
 
             int rowsAffect = db.ExcecuteDataNonQuery(sqlCommand);
             if (rowsAffect != 0)
@@ -62,11 +62,11 @@ namespace FootballScheduleManagement.Model.Forms
         {
             string sql = "UPDATE Scores SET  playerId = @playerId, matchId = @matchId, clubId = @clubId, ownGoal = @ownGoal, minute = @minute WHERE id = @id";
             sqlCommand.CommandText = sql;
-            sqlCommand.Parameters.Add("@playerId", SqlDbType.Int).Value = playerId;
-            sqlCommand.Parameters.Add("@matchId", SqlDbType.Int).Value = matchId;
-            sqlCommand.Parameters.Add("@clubId", SqlDbType.Int).Value = clubId;
-            sqlCommand.Parameters.Add("@ownGoal", SqlDbType.Int).Value = ownGoal;
-            sqlCommand.Parameters.Add("@minute", SqlDbType.Int).Value = minute;
+            sqlCommand.Parameters.Add("@playerId", SqlDbType.Int).Value = Convert.ToInt32(playerId);
+            sqlCommand.Parameters.Add("@matchId", SqlDbType.Int).Value = Convert.ToInt32(matchId);
+            sqlCommand.Parameters.Add("@clubId", SqlDbType.Int).Value = Convert.ToInt32(clubId);
+            sqlCommand.Parameters.Add("@ownGoal", SqlDbType.Int).Value = Convert.ToInt32(ownGoal);
+            sqlCommand.Parameters.Add("@minute", SqlDbType.Int).Value = Convert.ToInt32(minute);
             sqlCommand.Parameters.Add("@id", SqlDbType.Int).Value = Convert.ToInt32(id);
 
             int rowsAffect = db.ExcecuteDataNonQuery(sqlCommand);
@@ -77,9 +77,9 @@ namespace FootballScheduleManagement.Model.Forms
         public DataTable GetPlayerName(string clubId)
         {
             sqlCommand.Parameters.Clear();
-            string sql = "SELECT name FROM Player Where clubId = @clubId";
+            string sql = "SELECT name, id FROM Player Where clubId = @clubId";
             sqlCommand.CommandText = sql;
-            sqlCommand.Parameters.Add("@clubId", SqlDbType.Int).Value = clubId;
+            sqlCommand.Parameters.Add("@clubId", SqlDbType.Int).Value = Convert.ToInt32(clubId);
             dataSet = db.ExcecuteDataQuery(sqlCommand);
             dataTable = dataSet.Tables[0];
             return dataTable;
@@ -87,12 +87,21 @@ namespace FootballScheduleManagement.Model.Forms
 
         public DataTable GetClubName(string matchId)
         {
+            DataTable dataTable = new DataTable();
+            dataTable.Columns.Add("name", typeof(string));
+            dataTable.Columns.Add("Id", typeof(int));
             sqlCommand.Parameters.Clear();
-            string sql = "SELECT name FROM Match m Join Club c1 On c1.id = club1Id Join Club c2 on c2.id = club2Id  Where m.id = @matchId";
+            string sql = "SELECT c1.name, c1.id FROM Match m Join Club c1 On c1.id = m.club1Id Where m.id = @matchId";
             sqlCommand.CommandText = sql;
-            sqlCommand.Parameters.Add("@matchId", SqlDbType.Int).Value = matchId;
+            sqlCommand.Parameters.Add("@matchId", SqlDbType.Int).Value = Convert.ToInt32(matchId);
             dataSet = db.ExcecuteDataQuery(sqlCommand);
-            dataTable = dataSet.Tables[0];
+            dataTable.Merge(dataSet.Tables[0]);
+            sqlCommand.Parameters.Clear();
+            sql = "SELECT c2.name, c2.id FROM Match m Join Club c2 On c2.id = m.club2Id Where m.id = @matchId";
+            sqlCommand.CommandText = sql;
+            sqlCommand.Parameters.Add("@matchId", SqlDbType.Int).Value = Convert.ToInt32(matchId);
+            dataSet = db.ExcecuteDataQuery(sqlCommand);
+            dataTable.Merge(dataSet.Tables[0]);
             return dataTable;
         }
     }
