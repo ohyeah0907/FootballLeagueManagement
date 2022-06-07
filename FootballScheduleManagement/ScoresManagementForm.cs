@@ -36,14 +36,6 @@ namespace FootballScheduleManagement
             cboClub.Enabled = false;
             txtOwnGoal.Enabled = false;
             txtMinute.Enabled = false;
-
-            cboPlayer.DataSource = bSScoresManagementForm.GetPlayerName();
-            cboPlayer.DisplayMember = "name";
-            cboPlayer.ValueMember = "id";
-
-            cboClub.DataSource = bSScoresManagementForm.GetClubName();
-            cboClub.DisplayMember = "name";
-            cboClub.ValueMember = "id";
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -64,13 +56,29 @@ namespace FootballScheduleManagement
             cboClub.Text = "";
             txtOwnGoal.Text = "";
             txtMinute.Text = "";
-            cboPlayer.Focus();
+            txtMatchId.Focus();
 
-            cboPlayer.Enabled = true;
+            cboPlayer.Enabled = false;
             txtMatchId.Enabled = true;
-            cboClub.Enabled = true;
+            cboClub.Enabled = false;
             txtOwnGoal.Enabled = true;
             txtMinute.Enabled = true;
+
+            if (txtMatchId.Text != "")
+            {
+                cboClub.Enabled = true;
+                cboClub.DataSource = bSScoresManagementForm.GetClubName(txtMatchId.Text);
+                cboClub.DisplayMember = "name";
+                cboClub.ValueMember = "id";
+
+                if (cboClub.Text != "")
+                {
+                    cboPlayer.Enabled = true;
+                    cboPlayer.DataSource = bSScoresManagementForm.GetPlayerName(cboClub.Text);
+                    cboPlayer.DisplayMember = "name";
+                    cboPlayer.ValueMember = "id";
+                }
+            }
 
             dgvScoreList.Enabled = false;
 

@@ -74,21 +74,25 @@ namespace FootballScheduleManagement.Model.Forms
                 MessageBox.Show("Update data successfully");
         }
 
-        public DataTable GetPlayerName()
+        public DataTable GetPlayerName(string clubId)
         {
-            string sql = "SELECT name FROM Player";
-            SqlCommand command1 = new SqlCommand(sql);
-            DataSet dataSet = db.ExcecuteDataQuery(sqlCommand);
-            DataTable dataTable = dataSet.Tables[0];
+            sqlCommand.Parameters.Clear();
+            string sql = "SELECT name FROM Player Where clubId = @clubId";
+            sqlCommand.CommandText = sql;
+            sqlCommand.Parameters.Add("@clubId", SqlDbType.Int).Value = clubId;
+            dataSet = db.ExcecuteDataQuery(sqlCommand);
+            dataTable = dataSet.Tables[0];
             return dataTable;
         }
 
-        public DataTable GetClubName()
+        public DataTable GetClubName(string matchId)
         {
-            string sql = "SELECT name FROM Club";
-            SqlCommand command1 = new SqlCommand(sql);
-            DataSet dataSet = db.ExcecuteDataQuery(sqlCommand);
-            DataTable dataTable = dataSet.Tables[0];
+            sqlCommand.Parameters.Clear();
+            string sql = "SELECT name FROM Match m Join Club c1 On c1.id = club1Id Join Club c2 on c2.id = club2Id  Where m.id = @matchId";
+            sqlCommand.CommandText = sql;
+            sqlCommand.Parameters.Add("@matchId", SqlDbType.Int).Value = matchId;
+            dataSet = db.ExcecuteDataQuery(sqlCommand);
+            dataTable = dataSet.Tables[0];
             return dataTable;
         }
     }
