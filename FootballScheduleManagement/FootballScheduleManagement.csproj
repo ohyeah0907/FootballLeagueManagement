@@ -106,6 +106,9 @@
     <Compile Include="Model\Forms\BSLoginForm.cs" />
     <Compile Include="Model\Forms\BSManagementForm.cs" />
     <Compile Include="Model\Forms\BSNormallyForm.cs" />
+    <Compile Include="Model\Forms\BSRankManagementForm.cs" />
+    <Compile Include="Model\Forms\BSRefereeManagementForm.cs" />
+    <Compile Include="Model\Forms\BSScoresManagementForm.cs" />
     <Compile Include="Model\Manager.cs" />
     <Compile Include="Model\NormalUser.cs" />
     <Compile Include="Model\Permission.cs" />

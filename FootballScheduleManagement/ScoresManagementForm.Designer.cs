@@ -41,7 +41,7 @@ namespace FootballScheduleManagement
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.dgvClubList = new System.Windows.Forms.DataGridView();
+            this.dgvScoreList = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
             this.txtMatchId = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -49,7 +49,7 @@ namespace FootballScheduleManagement
             this.cboClub = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.cboPlayer = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvClubList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvScoreList)).BeginInit();
             this.SuspendLayout();
             // 
             // txtMinute
@@ -66,7 +66,7 @@ namespace FootballScheduleManagement
             this.label8.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label8.Location = new System.Drawing.Point(584, 254);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(58, 18);
+            this.label8.Size = new System.Drawing.Size(55, 17);
             this.label8.TabIndex = 106;
             this.label8.Text = "Minute:";
             // 
@@ -84,7 +84,7 @@ namespace FootballScheduleManagement
             this.label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label7.Location = new System.Drawing.Point(55, 253);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(73, 18);
+            this.label7.Size = new System.Drawing.Size(68, 17);
             this.label7.TabIndex = 104;
             this.label7.Text = "Own goal:";
             // 
@@ -102,7 +102,7 @@ namespace FootballScheduleManagement
             this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label3.Location = new System.Drawing.Point(55, 98);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(24, 18);
+            this.label3.Size = new System.Drawing.Size(24, 17);
             this.label3.TabIndex = 100;
             this.label3.Text = "Id:";
             // 
@@ -116,6 +116,7 @@ namespace FootballScheduleManagement
             this.btnClose.TabIndex = 99;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnCancel
             // 
@@ -127,6 +128,7 @@ namespace FootballScheduleManagement
             this.btnCancel.TabIndex = 98;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
@@ -138,6 +140,7 @@ namespace FootballScheduleManagement
             this.btnSave.TabIndex = 97;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnEdit
             // 
@@ -149,6 +152,7 @@ namespace FootballScheduleManagement
             this.btnEdit.TabIndex = 96;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnDelete
             // 
@@ -160,6 +164,7 @@ namespace FootballScheduleManagement
             this.btnDelete.TabIndex = 95;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnAdd
             // 
@@ -171,17 +176,19 @@ namespace FootballScheduleManagement
             this.btnAdd.TabIndex = 94;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // dgvClubList
+            // dgvScoreList
             // 
-            this.dgvClubList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvClubList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClubList.Location = new System.Drawing.Point(58, 301);
-            this.dgvClubList.Name = "dgvClubList";
-            this.dgvClubList.RowHeadersWidth = 51;
-            this.dgvClubList.RowTemplate.Height = 24;
-            this.dgvClubList.Size = new System.Drawing.Size(966, 274);
-            this.dgvClubList.TabIndex = 93;
+            this.dgvScoreList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvScoreList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvScoreList.Location = new System.Drawing.Point(58, 301);
+            this.dgvScoreList.Name = "dgvScoreList";
+            this.dgvScoreList.RowHeadersWidth = 51;
+            this.dgvScoreList.RowTemplate.Height = 24;
+            this.dgvScoreList.Size = new System.Drawing.Size(966, 274);
+            this.dgvScoreList.TabIndex = 93;
+            this.dgvScoreList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvScoreList_CellClick);
             // 
             // label4
             // 
@@ -190,7 +197,7 @@ namespace FootballScheduleManagement
             this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label4.Location = new System.Drawing.Point(55, 176);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(42, 18);
+            this.label4.Size = new System.Drawing.Size(40, 17);
             this.label4.TabIndex = 89;
             this.label4.Text = "Club:";
             // 
@@ -208,7 +215,7 @@ namespace FootballScheduleManagement
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label2.Location = new System.Drawing.Point(584, 97);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 18);
+            this.label2.Size = new System.Drawing.Size(66, 17);
             this.label2.TabIndex = 87;
             this.label2.Text = "Match id:";
             // 
@@ -239,7 +246,7 @@ namespace FootballScheduleManagement
             this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label5.Location = new System.Drawing.Point(584, 176);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 18);
+            this.label5.Size = new System.Drawing.Size(49, 17);
             this.label5.TabIndex = 109;
             this.label5.Text = "Player:";
             // 
@@ -274,7 +281,7 @@ namespace FootballScheduleManagement
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.dgvClubList);
+            this.Controls.Add(this.dgvScoreList);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtMatchId);
             this.Controls.Add(this.label2);
@@ -282,7 +289,8 @@ namespace FootballScheduleManagement
             this.Font = new System.Drawing.Font("Yu Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "ScoresManagementForm";
             this.Text = "ScoresManagementForm";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvClubList)).EndInit();
+            this.Load += new System.EventHandler(this.ScoresManagementForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvScoreList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -302,7 +310,7 @@ namespace FootballScheduleManagement
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.DataGridView dgvClubList;
+        private System.Windows.Forms.DataGridView dgvScoreList;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtMatchId;
         private System.Windows.Forms.Label label2;

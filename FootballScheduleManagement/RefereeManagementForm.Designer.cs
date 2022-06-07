@@ -61,7 +61,7 @@ namespace FootballScheduleManagement
             this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label3.Location = new System.Drawing.Point(57, 101);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(24, 18);
+            this.label3.Size = new System.Drawing.Size(24, 17);
             this.label3.TabIndex = 116;
             this.label3.Text = "Id:";
             // 
@@ -75,6 +75,7 @@ namespace FootballScheduleManagement
             this.btnClose.TabIndex = 115;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnCancel
             // 
@@ -86,6 +87,7 @@ namespace FootballScheduleManagement
             this.btnCancel.TabIndex = 114;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
@@ -97,6 +99,7 @@ namespace FootballScheduleManagement
             this.btnSave.TabIndex = 113;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnEdit
             // 
@@ -108,6 +111,7 @@ namespace FootballScheduleManagement
             this.btnEdit.TabIndex = 112;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnDelete
             // 
@@ -119,6 +123,7 @@ namespace FootballScheduleManagement
             this.btnDelete.TabIndex = 111;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnAdd
             // 
@@ -130,6 +135,7 @@ namespace FootballScheduleManagement
             this.btnAdd.TabIndex = 110;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // dgvRefereeList
             // 
@@ -141,6 +147,7 @@ namespace FootballScheduleManagement
             this.dgvRefereeList.RowTemplate.Height = 24;
             this.dgvRefereeList.Size = new System.Drawing.Size(926, 274);
             this.dgvRefereeList.TabIndex = 109;
+            this.dgvRefereeList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRefereeList_CellClick);
             // 
             // txtAge
             // 
@@ -155,7 +162,7 @@ namespace FootballScheduleManagement
             this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label4.Location = new System.Drawing.Point(810, 98);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(37, 18);
+            this.label4.Size = new System.Drawing.Size(34, 17);
             this.label4.TabIndex = 105;
             this.label4.Text = "Age:";
             // 
@@ -172,7 +179,7 @@ namespace FootballScheduleManagement
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label2.Location = new System.Drawing.Point(472, 101);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 18);
+            this.label2.Size = new System.Drawing.Size(47, 17);
             this.label2.TabIndex = 103;
             this.label2.Text = "Name:";
             // 
@@ -201,7 +208,7 @@ namespace FootballScheduleManagement
             this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label5.Location = new System.Drawing.Point(59, 163);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(94, 18);
+            this.label5.Size = new System.Drawing.Size(89, 17);
             this.label5.TabIndex = 118;
             this.label5.Text = "Date of birth:";
             // 
@@ -232,6 +239,7 @@ namespace FootballScheduleManagement
             this.Font = new System.Drawing.Font("Yu Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "RefereeManagementForm";
             this.Text = "RefereeManagementForm";
+            this.Load += new System.EventHandler(this.RefereeManagementForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRefereeList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
