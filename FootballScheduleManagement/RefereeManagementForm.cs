@@ -160,5 +160,6 @@ namespace FootballScheduleManagement
             this.txtName.Text = dgvRefereeList.Rows[position].Cells[1].Value.ToString();
             this.txtAge.Text = dgvRefereeList.Rows[position].Cells[2].Value.ToString();
             this.dtpDateOfBirth.Value = (DateTime)dgvRefereeList.Rows[position].Cells[3].Value;
+        }
     }
 }
