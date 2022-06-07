@@ -20,6 +20,8 @@ namespace FootballScheduleManagement
         BSManagementForm bsManagementForm;
         MatchManagementForm matchManagementForm;
         ClubManagementForm clubManagementForm;
+        ScoresManagementForm scoresManagementForm;
+        RefereeManagementForm refereeManagementForm;
         NormallyForm normallyForm;
 
         public ManagementForm()
@@ -32,6 +34,8 @@ namespace FootballScheduleManagement
             bsManagementForm = new BSManagementForm();
             clubManagementForm = new ClubManagementForm();
             matchManagementForm = new MatchManagementForm();
+            scoresManagementForm = new ScoresManagementForm();
+            refereeManagementForm = new RefereeManagementForm();
             normallyForm = new NormallyForm();
         }
 
@@ -57,7 +61,21 @@ namespace FootballScheduleManagement
         }
         private void tsmiScoreManagement_Click(object sender, EventArgs e)
         {
-
+            index = 1;
+            CloseFormsExcept(this, scoresManagementForm);
+            if (scoresManagementForm.IsDisposed == true)
+                scoresManagementForm = new ScoresManagementForm();
+            scoresManagementForm.MdiParent = this;
+            bsManagementForm.RedirectForm(ref user, scoresManagementForm, index);
+        }
+        private void tsmiRefereeManagement_Click(object sender, EventArgs e)
+        {
+            index = 1;
+            CloseFormsExcept(this, refereeManagementForm);
+            if (refereeManagementForm.IsDisposed == true)
+                refereeManagementForm = new RefereeManagementForm();
+            refereeManagementForm.MdiParent = this;
+            bsManagementForm.RedirectForm(ref user, refereeManagementForm, index);
         }
 
         private void tsmiPlayerManagement_Click(object sender, EventArgs e)
@@ -65,10 +83,6 @@ namespace FootballScheduleManagement
 
         }
 
-        private void tsmiRefereeManagement_Click(object sender, EventArgs e)
-        {
-
-        }
         private void tsmiNormallyForm_Click(object sender, EventArgs e)
         {
             index = 6;

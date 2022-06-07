@@ -25,14 +25,14 @@ namespace FootballScheduleManagement
 
         private void RankNormalForm_Load(object sender, EventArgs e)
         {
-            cboClub.DataSource = bSRankManagementForm.GetClubName();
             cboClub.DisplayMember = "name";
             cboClub.ValueMember = "id";
+            cboClub.DataSource = bSRankManagementForm.GetClubName();
         }
 
         private void cboClub_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string id = cboClub.SelectedValue.ToString();
+            int id = (int)cboClub.SelectedValue;
             DataTable dt = bSRankManagementForm.GetInfoClub(id);
             MemoryStream ms = new MemoryStream((byte[])dt.Rows[0][3]);
             this.picAvatar.Image = Image.FromStream(ms);

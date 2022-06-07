@@ -66,7 +66,7 @@ namespace FootballScheduleManagement
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(113, 202);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 17);
+            this.label2.Size = new System.Drawing.Size(42, 18);
             this.label2.TabIndex = 7;
             this.label2.Text = "Club:";
             // 
@@ -77,7 +77,7 @@ namespace FootballScheduleManagement
             this.lbRank.ForeColor = System.Drawing.Color.White;
             this.lbRank.Location = new System.Drawing.Point(554, 333);
             this.lbRank.Name = "lbRank";
-            this.lbRank.Size = new System.Drawing.Size(43, 17);
+            this.lbRank.Size = new System.Drawing.Size(44, 18);
             this.lbRank.TabIndex = 8;
             this.lbRank.Text = "Rank:";
             // 
@@ -88,7 +88,7 @@ namespace FootballScheduleManagement
             this.lbNumber.ForeColor = System.Drawing.Color.White;
             this.lbNumber.Location = new System.Drawing.Point(621, 333);
             this.lbNumber.Name = "lbNumber";
-            this.lbNumber.Size = new System.Drawing.Size(57, 17);
+            this.lbNumber.Size = new System.Drawing.Size(59, 18);
             this.lbNumber.TabIndex = 9;
             this.lbNumber.Text = "Number";
             // 
@@ -98,6 +98,7 @@ namespace FootballScheduleManagement
             this.picAvatar.Location = new System.Drawing.Point(547, 155);
             this.picAvatar.Name = "picAvatar";
             this.picAvatar.Size = new System.Drawing.Size(142, 151);
+            this.picAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picAvatar.TabIndex = 10;
             this.picAvatar.TabStop = false;
             // 

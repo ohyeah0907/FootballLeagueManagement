@@ -61,10 +61,10 @@ namespace FootballScheduleManagement.Model.Forms
                 MessageBox.Show("Update data successfully");
         }
 
-        public DataTable GetInfoClub(string clubId)
+        public DataTable GetInfoClub(int clubId)
         {
             sqlCommand.Parameters.Clear();
-            string sql = "SELECT rank, clubId, score, avatar FROM Rank Join Club On clubId = id Where clubId = @clubId";
+            string sql = "SELECT rank, clubId, score, avatar FROM Rank Join Club On Rank.clubId = Club.id Where clubId = @clubId";
             sqlCommand.CommandText = sql;
             sqlCommand.Parameters.Add("@clubId", SqlDbType.Int).Value = clubId;
             dataSet = db.ExcecuteDataQuery(sqlCommand);
@@ -74,8 +74,9 @@ namespace FootballScheduleManagement.Model.Forms
 
         public DataTable GetClubName()
         {
-            string sql = "SELECT name FROM Club";
-            SqlCommand command1 = new SqlCommand(sql);
+            sqlCommand.Parameters.Clear();
+            string sql = "SELECT name, id FROM Club";
+            sqlCommand.CommandText = sql;
             DataSet dataSet = db.ExcecuteDataQuery(sqlCommand);
             DataTable dataTable = dataSet.Tables[0];
             return dataTable;
