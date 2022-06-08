@@ -66,7 +66,6 @@ namespace FootballScheduleManagement
             picAvatar.Enabled = true;
 
             dgvClubList.Enabled = false;
-
             flag = true;
         }
 
@@ -119,9 +118,7 @@ namespace FootballScheduleManagement
                 {
                     MemoryStream ms = new MemoryStream();
                     picAvatar.Image.Save(ms, picAvatar.Image.RawFormat);
-
                     bsClubManagementForm.UpdateData(txtId.Text, txtName.Text, txtManager.Text, dtpFoundingDate.Value, txtCoach.Text, txtNation.Text, ms.ToArray());
-
                 }
             }
             btnSave.Enabled = false;

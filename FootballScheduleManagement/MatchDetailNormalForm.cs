@@ -16,6 +16,8 @@ namespace FootballScheduleManagement
         public MatchDetailNormalForm()
         {
             InitializeComponent();
+
+
         }
     }
 }

@@ -89,6 +89,7 @@ namespace FootballScheduleManagement
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(344, 28);
             this.txtUsername.TabIndex = 27;
+            this.txtUsername.Text = "nguyenthanhphat";
             // 
             // txtPassword
             // 
@@ -96,6 +97,7 @@ namespace FootballScheduleManagement
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(344, 28);
             this.txtPassword.TabIndex = 28;
+            this.txtPassword.Text = "12345";
             // 
             // panel1
             // 

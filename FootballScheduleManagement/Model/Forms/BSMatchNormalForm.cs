@@ -5,31 +5,32 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DevExpress.XtraGrid;
 using FootballScheduleManagement.DB.AdapterPattern;
 
 namespace FootballScheduleManagement.Model.Forms
 {
-    class BSLoginForm
+    class BSMatchNormalForm
     {
         IDBHandler db;
+        DataSet dataSet;
+        DataTable dataTable;
         SqlCommand sqlCommand;
-        public BSLoginForm()
+        public BSMatchNormalForm()
         {
             db = new SqlServerAdapter(new SqlServer());
             sqlCommand = new SqlCommand();
+            dataSet = new DataSet();
+            dataTable = new DataTable();
         }
-
-        public bool CheckInfo(string account, string password)
+        public void LoadData(ref GridControl dataGridView)
         {
             sqlCommand.Parameters.Clear();
-            string sql = "SELECT id FROM UserDB WHERE account=@account AND password=@password";
-            sqlCommand.Parameters.Add("@account", SqlDbType.NVarChar).Value = account;
-            sqlCommand.Parameters.Add("@password", SqlDbType.NVarChar).Value = password;
+            string sql = "SELECT * FROM Match";
             sqlCommand.CommandText = sql;
-            DataSet result = db.ExcecuteDataQuery(sqlCommand);
-            if (result.Tables[0].Rows.Count == 0)
-                return false;
-            return true;
+            dataSet = db.ExcecuteDataQuery(sqlCommand);
+            dataTable = dataSet.Tables[0];
+            dataGridView.DataSource = dataTable;
         }
     }
 }
