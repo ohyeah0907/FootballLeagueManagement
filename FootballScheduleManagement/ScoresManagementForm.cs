@@ -67,9 +67,9 @@ namespace FootballScheduleManagement
             if (txtMatchId.Text != "")
             {
                 cboClub.Enabled = true;
-                cboClub.DataSource = bSScoresManagementForm.GetClubName(txtMatchId.Text);
-                cboClub.DisplayMember = "name";
-                cboClub.ValueMember = "id";
+                DataTable table = bSScoresManagementForm.GetClubName(txtMatchId.Text);
+                cboClub.Items.Add(table.Rows[0][0].ToString());
+                cboClub.Items.Add(table.Rows[0][1].ToString());
 
                 if (cboClub.Text != "")
                 {
