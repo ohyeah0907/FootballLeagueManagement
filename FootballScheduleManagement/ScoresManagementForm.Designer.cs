@@ -207,6 +207,7 @@ namespace FootballScheduleManagement
             this.txtMatchId.Name = "txtMatchId";
             this.txtMatchId.Size = new System.Drawing.Size(287, 28);
             this.txtMatchId.TabIndex = 88;
+            this.txtMatchId.TextChanged += new System.EventHandler(this.txtMatchId_TextChanged);
             // 
             // label2
             // 
@@ -238,6 +239,7 @@ namespace FootballScheduleManagement
             this.cboClub.Name = "cboClub";
             this.cboClub.Size = new System.Drawing.Size(274, 25);
             this.cboClub.TabIndex = 108;
+            this.cboClub.SelectionChangeCommitted += new System.EventHandler(this.cboClub_SelectionChangeCommitted);
             // 
             // label5
             // 

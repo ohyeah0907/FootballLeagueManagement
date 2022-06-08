@@ -36,14 +36,6 @@ namespace FootballScheduleManagement
             cboClub.Enabled = false;
             txtOwnGoal.Enabled = false;
             txtMinute.Enabled = false;
-
-            cboPlayer.DataSource = bSScoresManagementForm.GetPlayerName();
-            cboPlayer.DisplayMember = "name";
-            cboPlayer.ValueMember = "id";
-
-            cboClub.DataSource = bSScoresManagementForm.GetClubName();
-            cboClub.DisplayMember = "name";
-            cboClub.ValueMember = "id";
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -64,13 +56,15 @@ namespace FootballScheduleManagement
             cboClub.Text = "";
             txtOwnGoal.Text = "";
             txtMinute.Text = "";
-            cboPlayer.Focus();
+            txtMatchId.Focus();
 
-            cboPlayer.Enabled = true;
+            cboPlayer.Enabled = false;
             txtMatchId.Enabled = true;
-            cboClub.Enabled = true;
+            cboClub.Enabled = false;
             txtOwnGoal.Enabled = true;
             txtMinute.Enabled = true;
+
+           
 
             dgvScoreList.Enabled = false;
 
@@ -186,6 +180,29 @@ namespace FootballScheduleManagement
                 return true;
             }
             return false;
+        }
+
+        private void txtMatchId_TextChanged(object sender, EventArgs e)
+        {
+            if (txtMatchId.Text != "")
+            {
+                cboClub.Enabled = true;
+                cboClub.DataSource = bSScoresManagementForm.GetClubName(txtMatchId.Text);
+                cboClub.DisplayMember = "name";
+                cboClub.ValueMember = "id";
+            }
+        }
+
+        private void cboClub_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (cboClub.SelectedValue != null)
+            {
+                MessageBox.Show(Convert.ToString(cboClub.SelectedValue));
+                cboPlayer.Enabled = true;
+                cboPlayer.DisplayMember = "name";
+                cboPlayer.ValueMember = "id";
+                cboPlayer.DataSource = bSScoresManagementForm.GetPlayerName(cboClub.SelectedValue.ToString());
+            }
         }
     }
 }
