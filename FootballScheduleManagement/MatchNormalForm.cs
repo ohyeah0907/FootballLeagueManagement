@@ -37,7 +37,7 @@ namespace FootballScheduleManagement
             {
                 Directory.CreateDirectory(fileName);
             }
-            string path = fileName + "\\Club.xls";
+            string path = fileName + "\\Match.xls";
             this.gcMatchList.ExportToXls(path);
             Process.Start(path);
 

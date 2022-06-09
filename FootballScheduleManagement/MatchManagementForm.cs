@@ -18,8 +18,8 @@ namespace FootballScheduleManagement
     public partial class MatchManagementForm : DevExpress.XtraEditors.XtraForm
     {
         bool flag = false;
-        BSMatchManagement bSMatchManagement = new BSMatchManagement();
-
+        BSMatchManagement bsMatchManagement = new BSMatchManagement();
+        BSClubManagementForm bsClubManagementForm = new BSClubManagementForm();
 
         public MatchManagementForm()
         {
@@ -68,7 +68,7 @@ namespace FootballScheduleManagement
                 //Insert new record to database
                 else
                 { 
-                    bSMatchManagement.addMatch(refereeId, club1Id, club2Id, dateMatch, periodTime);
+                    bsMatchManagement.addMatch(refereeId, club1Id, club2Id, dateMatch, periodTime);
                     dgvMatchList.Enabled = true;
                     flag = false;
                 }
@@ -80,8 +80,7 @@ namespace FootballScheduleManagement
                 //Update new record to database
                 else
                 { 
-                    bSMatchManagement.updateMatch(Int32.Parse(txtId.Text), refereeId, club1Id, club2Id, dateMatch, periodTime);
-
+                    bsMatchManagement.updateMatch(Int32.Parse(txtId.Text), refereeId, club1Id, club2Id, dateMatch, periodTime);
                 }
             }
             btnSave.Enabled = false;
@@ -98,7 +97,7 @@ namespace FootballScheduleManagement
             cboReferee.Enabled = false;
             cboSecondClub.Enabled = false;
 
-            bSMatchManagement.loadMatch(ref dgvMatchList);
+            bsMatchManagement.loadMatch(ref dgvMatchList);
         }
 
         public bool CheckEmpty()
@@ -133,8 +132,8 @@ namespace FootballScheduleManagement
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            bSMatchManagement.deleteMatch(Int32.Parse( txtId.Text));
-            bSMatchManagement.loadMatch(ref dgvMatchList);
+            bsMatchManagement.deleteMatch(Int32.Parse( txtId.Text));
+            bsMatchManagement.loadMatch(ref dgvMatchList);
         }
 
         private void dgvMatchList_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -144,7 +143,7 @@ namespace FootballScheduleManagement
 
         private void MatchManagementForm_Load(object sender, EventArgs e)
         {
-            bSMatchManagement.loadMatch(ref dgvMatchList);
+            bsMatchManagement.loadMatch(ref dgvMatchList);
 
             btnSave.Enabled = false;
             btnCancel.Enabled = false;

@@ -140,6 +140,7 @@
     <Compile Include="Model\BridgePattern\IForm.cs" />
     <Compile Include="Model\BridgePattern\ManagerForm.cs" />
     <Compile Include="Model\BridgePattern\NormalForm.cs" />
+    <Compile Include="Model\Club.cs" />
     <Compile Include="Model\FactoryPattern\CreateUser.cs" />
     <Compile Include="Model\FactoryPattern\ManagerUserCreator.cs" />
     <Compile Include="Model\FactoryPattern\NormalUserCreator.cs" />

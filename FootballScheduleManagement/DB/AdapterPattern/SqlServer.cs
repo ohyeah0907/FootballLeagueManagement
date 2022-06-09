@@ -14,8 +14,8 @@ namespace FootballScheduleManagement.DB.AdapterPattern
     class SqlServer
     {
         //Database connection string
-        string connectionString = @"Data Source=DESKTOP-I36H1BN\MSSQLSERVER1;Initial Catalog=FootballScheduleManagement;
-        Persist Security Info=True;Integrated Security=SSPI";
+        string connectionString = @"Data Source=DESKTOP-9TP4UJ6\OHYEAH_SERVER;Initial Catalog=FootballScheduleManagement;
+        Persist Security Info=True;User ID=sa;Password=ohyeah0907@";
 
         SqlConnection conn;
         SqlDataAdapter sqlDataAdapter;

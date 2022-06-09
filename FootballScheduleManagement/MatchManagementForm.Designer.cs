@@ -119,6 +119,9 @@ namespace FootballScheduleManagement
             // 
             // dgvMatchList
             // 
+            this.dgvMatchList.AllowUserToAddRows = false;
+            this.dgvMatchList.AllowUserToDeleteRows = false;
+            this.dgvMatchList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvMatchList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMatchList.Location = new System.Drawing.Point(61, 262);
             this.dgvMatchList.Name = "dgvMatchList";
