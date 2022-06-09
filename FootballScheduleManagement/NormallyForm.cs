@@ -17,11 +17,13 @@ namespace FootballScheduleManagement
         public User user;
         ClubNormalForm clubNormalForm;
         ManagementForm managementForm;
+        MatchNormalForm matchNormalForm;
         public NormallyForm()
         {
             InitializeComponent();
             clubNormalForm = new ClubNormalForm();
             managementForm = new ManagementForm();
+            matchNormalForm = new MatchNormalForm();
         }
         private void NormallyForm_Load(object sender, EventArgs e)
         {
@@ -52,7 +54,12 @@ namespace FootballScheduleManagement
 
         private void tsmiMatchList_Click(object sender, EventArgs e)
         {
-
+            CloseFormsExcept(this, matchNormalForm);
+            if (matchNormalForm.IsDisposed == true)
+                matchNormalForm = new MatchNormalForm();
+            matchNormalForm.MdiParent = this;
+            matchNormalForm.Dock = DockStyle.Fill;
+            matchNormalForm.Show();
         }
 
         private void tsmiPlayerList_Click(object sender, EventArgs e)

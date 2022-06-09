@@ -71,6 +71,7 @@ namespace FootballScheduleManagement
             this.btnCancel.TabIndex = 66;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
@@ -81,6 +82,7 @@ namespace FootballScheduleManagement
             this.btnSave.TabIndex = 65;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnEdit
             // 
@@ -91,6 +93,7 @@ namespace FootballScheduleManagement
             this.btnEdit.TabIndex = 64;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnDelete
             // 
@@ -101,6 +104,7 @@ namespace FootballScheduleManagement
             this.btnDelete.TabIndex = 63;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnAdd
             // 
@@ -111,9 +115,13 @@ namespace FootballScheduleManagement
             this.btnAdd.TabIndex = 62;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // dgvMatchList
             // 
+            this.dgvMatchList.AllowUserToAddRows = false;
+            this.dgvMatchList.AllowUserToDeleteRows = false;
+            this.dgvMatchList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvMatchList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMatchList.Location = new System.Drawing.Point(61, 262);
             this.dgvMatchList.Name = "dgvMatchList";
@@ -121,6 +129,8 @@ namespace FootballScheduleManagement
             this.dgvMatchList.RowTemplate.Height = 24;
             this.dgvMatchList.Size = new System.Drawing.Size(1094, 274);
             this.dgvMatchList.TabIndex = 61;
+            this.dgvMatchList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMatchList_CellClick);
+            this.dgvMatchList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMatchList_CellContentClick);
             // 
             // dtpDateOfMatch
             // 
@@ -201,6 +211,10 @@ namespace FootballScheduleManagement
             // cboFirstClub
             // 
             this.cboFirstClub.FormattingEnabled = true;
+            this.cboFirstClub.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3"});
             this.cboFirstClub.Location = new System.Drawing.Point(514, 87);
             this.cboFirstClub.Name = "cboFirstClub";
             this.cboFirstClub.Size = new System.Drawing.Size(202, 25);
@@ -209,6 +223,10 @@ namespace FootballScheduleManagement
             // cboSecondClub
             // 
             this.cboSecondClub.FormattingEnabled = true;
+            this.cboSecondClub.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3"});
             this.cboSecondClub.Location = new System.Drawing.Point(866, 85);
             this.cboSecondClub.Name = "cboSecondClub";
             this.cboSecondClub.Size = new System.Drawing.Size(202, 25);
@@ -234,6 +252,10 @@ namespace FootballScheduleManagement
             // cboReferee
             // 
             this.cboReferee.FormattingEnabled = true;
+            this.cboReferee.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3"});
             this.cboReferee.Location = new System.Drawing.Point(183, 158);
             this.cboReferee.Name = "cboReferee";
             this.cboReferee.Size = new System.Drawing.Size(202, 25);
@@ -270,6 +292,7 @@ namespace FootballScheduleManagement
             this.Font = new System.Drawing.Font("Yu Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "MatchManagementForm";
             this.Text = "MatchManagementForm";
+            this.Load += new System.EventHandler(this.MatchManagementForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMatchList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

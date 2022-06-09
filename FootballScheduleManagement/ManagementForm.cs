@@ -52,7 +52,7 @@ namespace FootballScheduleManagement
         }
         private void tsmiMatchManagement_Click(object sender, EventArgs e)
         {
-            index = 1;
+            index = 2;
             CloseFormsExcept(this, matchManagementForm);
             if (matchManagementForm.IsDisposed == true)
                 matchManagementForm = new MatchManagementForm();
