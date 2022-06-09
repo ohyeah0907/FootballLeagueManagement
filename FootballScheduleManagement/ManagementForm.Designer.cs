@@ -58,7 +58,7 @@ namespace FootballScheduleManagement
             this.mnsNavigation.Location = new System.Drawing.Point(0, 0);
             this.mnsNavigation.Name = "mnsNavigation";
             this.mnsNavigation.Padding = new System.Windows.Forms.Padding(9, 2, 0, 2);
-            this.mnsNavigation.Size = new System.Drawing.Size(1119, 28);
+            this.mnsNavigation.Size = new System.Drawing.Size(1113, 28);
             this.mnsNavigation.TabIndex = 1;
             this.mnsNavigation.Text = "menuStrip1";
             // 
@@ -112,7 +112,7 @@ namespace FootballScheduleManagement
             this.toolStripLabel1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 28);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1119, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(1113, 27);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -138,7 +138,7 @@ namespace FootballScheduleManagement
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1119, 754);
+            this.ClientSize = new System.Drawing.Size(1113, 754);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.mnsNavigation);
             this.Font = new System.Drawing.Font("Yu Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

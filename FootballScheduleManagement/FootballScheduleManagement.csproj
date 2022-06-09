@@ -148,10 +148,11 @@
     <Compile Include="Model\Forms\BSClubNormalForm.cs" />
     <Compile Include="Model\Forms\BSLoginForm.cs" />
     <Compile Include="Model\Forms\BSManagementForm.cs" />
+    <Compile Include="Model\Forms\BSMatchDetailNormalForm.cs" />
     <Compile Include="Model\Forms\BSMatchManagement.cs" />
     <Compile Include="Model\Forms\BSMatchNormalForm.cs" />
-    <Compile Include="Model\Forms\BSNormallyForm.cs" />
-    <Compile Include="Model\Forms\BSRankManagementForm.cs" />
+    <Compile Include="Model\Forms\BSPlayerManagement.cs" />
+    <Compile Include="Model\Forms\BSRankNormalForm.cs" />
     <Compile Include="Model\Forms\BSRefereeManagementForm.cs" />
     <Compile Include="Model\Forms\BSScoresManagementForm.cs" />
     <Compile Include="Model\Manager.cs" />

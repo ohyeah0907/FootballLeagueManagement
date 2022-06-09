@@ -211,22 +211,15 @@ namespace FootballScheduleManagement
             // cboFirstClub
             // 
             this.cboFirstClub.FormattingEnabled = true;
-            this.cboFirstClub.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3"});
             this.cboFirstClub.Location = new System.Drawing.Point(514, 87);
             this.cboFirstClub.Name = "cboFirstClub";
             this.cboFirstClub.Size = new System.Drawing.Size(202, 25);
             this.cboFirstClub.TabIndex = 68;
+            this.cboFirstClub.SelectionChangeCommitted += new System.EventHandler(this.cboFirstClub_SelectionChangeCommitted);
             // 
             // cboSecondClub
             // 
             this.cboSecondClub.FormattingEnabled = true;
-            this.cboSecondClub.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3"});
             this.cboSecondClub.Location = new System.Drawing.Point(866, 85);
             this.cboSecondClub.Name = "cboSecondClub";
             this.cboSecondClub.Size = new System.Drawing.Size(202, 25);
@@ -252,10 +245,6 @@ namespace FootballScheduleManagement
             // cboReferee
             // 
             this.cboReferee.FormattingEnabled = true;
-            this.cboReferee.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3"});
             this.cboReferee.Location = new System.Drawing.Point(183, 158);
             this.cboReferee.Name = "cboReferee";
             this.cboReferee.Size = new System.Drawing.Size(202, 25);

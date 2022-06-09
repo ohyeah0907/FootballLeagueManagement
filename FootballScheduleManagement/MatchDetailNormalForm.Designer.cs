@@ -30,15 +30,16 @@ namespace FootballScheduleManagement
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.picFirstClub = new System.Windows.Forms.PictureBox();
+            this.picSecondClub = new System.Windows.Forms.PictureBox();
             this.lblFirstClub = new System.Windows.Forms.Label();
             this.lblSecondClub = new System.Windows.Forms.Label();
             this.lblReferee = new System.Windows.Forms.Label();
             this.lblDateMatch = new System.Windows.Forms.Label();
             this.lblPeriodTime = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.label2 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.picFirstClub)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSecondClub)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -53,43 +54,45 @@ namespace FootballScheduleManagement
             this.label1.TabIndex = 4;
             this.label1.Text = "MATCH DETAIL INFORMATION";
             // 
-            // pictureBox1
+            // picFirstClub
             // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1.Location = new System.Drawing.Point(160, 167);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(153, 154);
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
+            this.picFirstClub.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.picFirstClub.Location = new System.Drawing.Point(160, 167);
+            this.picFirstClub.Name = "picFirstClub";
+            this.picFirstClub.Size = new System.Drawing.Size(153, 154);
+            this.picFirstClub.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picFirstClub.TabIndex = 6;
+            this.picFirstClub.TabStop = false;
             // 
-            // pictureBox2
+            // picSecondClub
             // 
-            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox2.Location = new System.Drawing.Point(603, 167);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(153, 154);
-            this.pictureBox2.TabIndex = 7;
-            this.pictureBox2.TabStop = false;
+            this.picSecondClub.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.picSecondClub.Location = new System.Drawing.Point(603, 167);
+            this.picSecondClub.Name = "picSecondClub";
+            this.picSecondClub.Size = new System.Drawing.Size(153, 154);
+            this.picSecondClub.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picSecondClub.TabIndex = 7;
+            this.picSecondClub.TabStop = false;
             // 
             // lblFirstClub
             // 
             this.lblFirstClub.AutoSize = true;
-            this.lblFirstClub.Font = new System.Drawing.Font("Yu Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFirstClub.Font = new System.Drawing.Font("Yu Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFirstClub.ForeColor = System.Drawing.Color.White;
-            this.lblFirstClub.Location = new System.Drawing.Point(199, 362);
+            this.lblFirstClub.Location = new System.Drawing.Point(180, 352);
             this.lblFirstClub.Name = "lblFirstClub";
-            this.lblFirstClub.Size = new System.Drawing.Size(69, 18);
+            this.lblFirstClub.Size = new System.Drawing.Size(117, 31);
             this.lblFirstClub.TabIndex = 8;
             this.lblFirstClub.Text = "First club";
             // 
             // lblSecondClub
             // 
             this.lblSecondClub.AutoSize = true;
-            this.lblSecondClub.Font = new System.Drawing.Font("Yu Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSecondClub.Font = new System.Drawing.Font("Yu Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSecondClub.ForeColor = System.Drawing.Color.White;
-            this.lblSecondClub.Location = new System.Drawing.Point(638, 362);
+            this.lblSecondClub.Location = new System.Drawing.Point(608, 352);
             this.lblSecondClub.Name = "lblSecondClub";
-            this.lblSecondClub.Size = new System.Drawing.Size(87, 18);
+            this.lblSecondClub.Size = new System.Drawing.Size(148, 31);
             this.lblSecondClub.TabIndex = 9;
             this.lblSecondClub.Text = "Second club";
             // 
@@ -98,7 +101,7 @@ namespace FootballScheduleManagement
             this.lblReferee.AutoSize = true;
             this.lblReferee.Font = new System.Drawing.Font("Yu Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblReferee.ForeColor = System.Drawing.Color.White;
-            this.lblReferee.Location = new System.Drawing.Point(435, 238);
+            this.lblReferee.Location = new System.Drawing.Point(425, 240);
             this.lblReferee.Name = "lblReferee";
             this.lblReferee.Size = new System.Drawing.Size(59, 18);
             this.lblReferee.TabIndex = 10;
@@ -120,11 +123,22 @@ namespace FootballScheduleManagement
             this.lblPeriodTime.AutoSize = true;
             this.lblPeriodTime.Font = new System.Drawing.Font("Yu Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPeriodTime.ForeColor = System.Drawing.Color.White;
-            this.lblPeriodTime.Location = new System.Drawing.Point(424, 284);
+            this.lblPeriodTime.Location = new System.Drawing.Point(478, 284);
             this.lblPeriodTime.Name = "lblPeriodTime";
             this.lblPeriodTime.Size = new System.Drawing.Size(83, 18);
             this.lblPeriodTime.TabIndex = 12;
             this.lblPeriodTime.Text = "Period time";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Yu Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(376, 284);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(87, 18);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Period time:";
             // 
             // MatchDetailNormalForm
             // 
@@ -133,18 +147,20 @@ namespace FootballScheduleManagement
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(917, 559);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.lblPeriodTime);
             this.Controls.Add(this.lblDateMatch);
             this.Controls.Add(this.lblReferee);
             this.Controls.Add(this.lblSecondClub);
             this.Controls.Add(this.lblFirstClub);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.picSecondClub);
+            this.Controls.Add(this.picFirstClub);
             this.Controls.Add(this.label1);
             this.Name = "MatchDetailNormalForm";
             this.Text = "MatchDetailNormalForm";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.Load += new System.EventHandler(this.MatchDetailNormalForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.picFirstClub)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSecondClub)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -152,12 +168,13 @@ namespace FootballScheduleManagement
 
         #endregion
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox picFirstClub;
+        private System.Windows.Forms.PictureBox picSecondClub;
         private System.Windows.Forms.Label lblFirstClub;
         private System.Windows.Forms.Label lblSecondClub;
         private System.Windows.Forms.Label lblReferee;
         private System.Windows.Forms.Label lblDateMatch;
         private System.Windows.Forms.Label lblPeriodTime;
+        private System.Windows.Forms.Label label2;
     }
 }

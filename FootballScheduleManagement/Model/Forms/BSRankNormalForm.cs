@@ -7,14 +7,14 @@ using FootballScheduleManagement.DB.AdapterPattern;
 
 namespace FootballScheduleManagement.Model.Forms
 {
-    class BSRankManagementForm
+    class BSRankNormalForm
     {
         IDBHandler db;
         DataSet dataSet;
         DataTable dataTable;
         SqlCommand sqlCommand;
 
-        public BSRankManagementForm()
+        public BSRankNormalForm()
         {
             db = new SqlServerAdapter(new SqlServer());
             sqlCommand = new SqlCommand();

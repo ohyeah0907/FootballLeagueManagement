@@ -11,14 +11,15 @@ namespace FootballScheduleManagement.Model
         private string id;
         private string name;
 
-        private List<Club> opponentList;
+        private List<Club> opponentList = new List<Club>();
         public string Id { get => id; set => id = value; }
         public string Name { get => name; set => name = value; }
         internal List<Club> OpponentList { get => opponentList; set => opponentList = value; }
 
-        public Club()
+        public Club(string id, string name)
         {
-
+            this.Id = id;
+            this.Name = name;
         }
     }
 }

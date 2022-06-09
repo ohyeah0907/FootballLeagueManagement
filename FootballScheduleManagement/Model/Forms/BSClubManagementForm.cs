@@ -49,6 +49,7 @@ namespace FootballScheduleManagement.Model.Forms
         }
         public void AddData(string name, string manager, DateTime foundingDate, string coachName, string nation, Array img)
         {
+            sqlCommand.Parameters.Clear();
             string sql = "INSERT INTO Club(name, manager, foundingDate, coachName, nation, avatar) VALUES(@name, @manager, @foundingDate, @coachName, @nation, @img)";
             sqlCommand.CommandText = sql;
             sqlCommand.Parameters.Add("@name", SqlDbType.NVarChar).Value = name;
@@ -65,6 +66,7 @@ namespace FootballScheduleManagement.Model.Forms
 
         public void DeleteData(string id)
         {
+            sqlCommand.Parameters.Clear();
             string sql = "DELETE FROM Club WHERE id = @id";
             sqlCommand.CommandText = sql;
             sqlCommand.Parameters.Add("@id", SqlDbType.Int).Value = Convert.ToInt32(id);
@@ -77,6 +79,7 @@ namespace FootballScheduleManagement.Model.Forms
 
         public void UpdateData(string id, string name, string manager, DateTime foundingDate, string coachName, string nation, Array img)
         {
+            sqlCommand.Parameters.Clear();
             string sql = "UPDATE Club SET  name = @name, manager = @manager, foundingDate = @foundingDate, coachName = @coachName, nation = @nation, avatar = @img WHERE id = @id";
             sqlCommand.CommandText = sql;
             sqlCommand.Parameters.Add("@name", SqlDbType.NVarChar).Value = name;
@@ -90,6 +93,48 @@ namespace FootballScheduleManagement.Model.Forms
             int rowsAffect = db.ExcecuteDataNonQuery(sqlCommand);
             if (rowsAffect != 0)
                 MessageBox.Show("Update data successfully");
+        }
+
+        public DataTable GetClubListWithCondition(string condition)
+        {
+            sqlCommand.Parameters.Clear();
+            string sql = "SELECT id, name FROM Club WHERE name != @condition";
+            sqlCommand.CommandText = sql;
+            sqlCommand.Parameters.Add("@condition", SqlDbType.NVarChar).Value = condition;
+            dataSet = db.ExcecuteDataQuery(sqlCommand);
+            dataTable = dataSet.Tables[0];
+            return dataTable;
+        }
+        public DataTable GetClubNameList(string matchId)
+        {
+            DataTable dataTable = new DataTable();
+            dataTable.Columns.Add("name", typeof(string));
+            dataTable.Columns.Add("Id", typeof(int));
+            sqlCommand.Parameters.Clear();
+            string sql = "SELECT c1.name, c1.id FROM Match m Join Club c1 On c1.id = m.club1Id Where m.id = @matchId";
+            sqlCommand.CommandText = sql;
+            sqlCommand.Parameters.Add("@matchId", SqlDbType.Int).Value = Convert.ToInt32(matchId);
+            dataSet = db.ExcecuteDataQuery(sqlCommand);
+            dataTable.Merge(dataSet.Tables[0]);
+            sqlCommand.Parameters.Clear();
+            sql = "SELECT c2.name, c2.id FROM Match m Join Club c2 On c2.id = m.club2Id Where m.id = @matchId";
+            sqlCommand.CommandText = sql;
+            sqlCommand.Parameters.Add("@matchId", SqlDbType.Int).Value = Convert.ToInt32(matchId);
+            dataSet = db.ExcecuteDataQuery(sqlCommand);
+            dataTable.Merge(dataSet.Tables[0]);
+            sqlCommand.Parameters.Clear();
+            return dataTable;
+        }
+
+        public DataTable GetSpecificClubName(string id)
+        {
+            string sql = "SELECT id, name FROM Club WHERE id = @id";
+            sqlCommand.CommandText = sql;
+            sqlCommand.Parameters.Add("@id", SqlDbType.Int).Value = Convert.ToInt32(id);
+            dataSet = db.ExcecuteDataQuery(sqlCommand);
+            dataTable = dataSet.Tables[0];
+            sqlCommand.Parameters.Clear();
+            return dataTable;
         }
     }
 }

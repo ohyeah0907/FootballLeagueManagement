@@ -8,10 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using FootballScheduleManagement.Model.Forms;
 using System.IO;
-
-
+using FootballScheduleManagement.Model.Forms;
+using FootballScheduleManagement.Model;
 
 namespace FootballScheduleManagement
 {
@@ -20,7 +19,9 @@ namespace FootballScheduleManagement
         bool flag = false;
         BSMatchManagement bsMatchManagement = new BSMatchManagement();
         BSClubManagementForm bsClubManagementForm = new BSClubManagementForm();
-
+        BSRefereeManagementForm bsRefereeManagementForm = new BSRefereeManagementForm();
+        List<Club> firstClubList = new List<Club>();
+        DataTable dt = new DataTable();
         public MatchManagementForm()
         {
             InitializeComponent();
@@ -55,11 +56,10 @@ namespace FootballScheduleManagement
 
         private void btnSave_Click(object sender, System.EventArgs e)
         {
-            int refereeId = Int32.Parse(cboReferee.SelectedItem.ToString());
-            int club1Id = Int32.Parse(cboFirstClub.SelectedItem.ToString());
-            int club2Id = Int32.Parse(cboSecondClub.SelectedItem.ToString());
+            int refereeId = Int32.Parse(cboReferee.SelectedValue.ToString());
+            int club1Id = Int32.Parse(cboFirstClub.SelectedValue.ToString());
+            int club2Id = Int32.Parse(cboSecondClub.SelectedValue.ToString());
             DateTime dateMatch = dtpDateOfMatch.Value;
-
             string periodTime = txtPeriodTime.Text.ToString();
             if (flag == true)
             {
@@ -96,6 +96,7 @@ namespace FootballScheduleManagement
             cboFirstClub.Enabled = false;
             cboReferee.Enabled = false;
             cboSecondClub.Enabled = false;
+            dgvMatchList.Enabled = true;
 
             bsMatchManagement.loadMatch(ref dgvMatchList);
         }
@@ -149,11 +150,30 @@ namespace FootballScheduleManagement
             btnCancel.Enabled = false;
 
             txtId.Enabled = false;
-            txtPeriodTime.Enabled = true;
-            dtpDateOfMatch.Enabled = true;
-            cboFirstClub.Enabled = true;
-            cboReferee.Enabled = true;
-            cboSecondClub.Enabled = true;
+            txtPeriodTime.Enabled = false;
+            dtpDateOfMatch.Enabled = false;
+            cboFirstClub.Enabled = false;
+            cboReferee.Enabled = false;
+            cboSecondClub.Enabled = false;
+
+            dt = bsClubManagementForm.GetClubListWithCondition("''");
+            foreach (DataRow row in dt.Rows)
+            {
+                Club club = new Club(row["id"].ToString(), row["name"].ToString());
+                DataTable secondClubList = bsClubManagementForm.GetClubListWithCondition(club.Name);
+                foreach (DataRow secondClub in secondClubList.Rows)
+                {
+                    club.OpponentList.Add(new Club(secondClub["id"].ToString(), secondClub["name"].ToString()));
+                }
+                firstClubList.Add(club);
+            }
+            cboFirstClub.DataSource = firstClubList;
+            cboFirstClub.DisplayMember = "name";
+            cboFirstClub.ValueMember = "id";
+            dt = bsRefereeManagementForm.GetRefereeList();
+            cboReferee.DataSource = dt;
+            cboReferee.DisplayMember = "name";
+            cboReferee.ValueMember = "id";
         }
 
         private void dgvMatchList_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -161,9 +181,9 @@ namespace FootballScheduleManagement
             int position = e.RowIndex;
 
             this.txtId.Text = dgvMatchList.Rows[position].Cells[0].Value.ToString();
-            this.cboReferee.Text = dgvMatchList.Rows[position].Cells[1].Value.ToString();
-            this.cboFirstClub.Text = dgvMatchList.Rows[position].Cells[2].Value.ToString();
-            this.cboSecondClub.Text = dgvMatchList.Rows[position].Cells[3].Value.ToString();
+            this.cboReferee.Text = bsRefereeManagementForm.GetSpecificReferee(dgvMatchList.Rows[position].Cells[1].Value.ToString()).Rows[0][1].ToString();
+            this.cboFirstClub.Text = bsClubManagementForm.GetSpecificClubName(dgvMatchList.Rows[position].Cells[2].Value.ToString()).Rows[0][1].ToString();
+            this.cboSecondClub.Text = bsClubManagementForm.GetSpecificClubName(dgvMatchList.Rows[position].Cells[3].Value.ToString()).Rows[0][1].ToString();
             this.dtpDateOfMatch.Value = (DateTime)dgvMatchList.Rows[position].Cells[4].Value;
             this.txtPeriodTime.Text = dgvMatchList.Rows[position].Cells[5].Value.ToString();
             
@@ -196,6 +216,17 @@ namespace FootballScheduleManagement
             dgvMatchList.Enabled = true;
 
             flag = false;
+        }
+
+        private void cboFirstClub_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if(cboFirstClub.SelectedItem != null)
+            {
+                Club club = cboFirstClub.SelectedItem as Club;
+                cboSecondClub.DataSource = club.OpponentList;
+                cboSecondClub.DisplayMember = "name";
+                cboSecondClub.ValueMember = "id";
+            }    
         }
     }
 }

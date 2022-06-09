@@ -17,7 +17,10 @@ namespace FootballScheduleManagement
     {
         bool flag = false;
         int position;
-        BSScoresManagementForm bSScoresManagementForm = new BSScoresManagementForm();
+        BSScoresManagementForm bsScoresManagementForm = new BSScoresManagementForm();
+        BSClubManagementForm bsClubManagementForm = new BSClubManagementForm();
+        BSPlayerManagement bsPlayerManagement = new BSPlayerManagement();
+        BSRefereeManagementForm bsRefereeManagementForm = new BSRefereeManagementForm();
 
         public ScoresManagementForm()
         {
@@ -26,7 +29,7 @@ namespace FootballScheduleManagement
 
         private void ScoresManagementForm_Load(object sender, EventArgs e)
         {
-            bSScoresManagementForm.LoadData(ref dgvScoreList);
+            bsScoresManagementForm.LoadData(ref dgvScoreList);
 
             btnSave.Enabled = false;
             btnCancel.Enabled = false;
@@ -74,8 +77,8 @@ namespace FootballScheduleManagement
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            bSScoresManagementForm.DeleteData(txtId.Text);
-            bSScoresManagementForm.LoadData(ref dgvScoreList);
+            bsScoresManagementForm.DeleteData(txtId.Text);
+            bsScoresManagementForm.LoadData(ref dgvScoreList);
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -91,14 +94,14 @@ namespace FootballScheduleManagement
             txtOwnGoal.Enabled = true;
             txtMinute.Enabled = true;
             cboPlayer.Focus();
-            cboClub.DataSource = bSScoresManagementForm.GetClubName(txtMatchId.Text);
+            cboClub.DataSource = bsClubManagementForm.GetSpecificClubName(txtMatchId.Text);
             cboClub.DisplayMember = "name";
             cboClub.ValueMember = "id";
-            cboPlayer.DataSource = bSScoresManagementForm.GetPlayerNameList(dgvScoreList.Rows[position].Cells[3].Value.ToString());
+            cboPlayer.DataSource = bsPlayerManagement.GetPlayerNameList(dgvScoreList.Rows[position].Cells[3].Value.ToString());
             cboPlayer.DisplayMember = "name";
             cboPlayer.ValueMember = "id";
-            cboPlayer.Text = bSScoresManagementForm.GetPlayerName(dgvScoreList.Rows[position].Cells[1].Value.ToString()).Rows[0][1].ToString();
-            cboClub.Text = bSScoresManagementForm.GetClubName(dgvScoreList.Rows[position].Cells[3].Value.ToString()).Rows[0][1].ToString();
+            cboPlayer.Text = bsPlayerManagement.GetPlayerName(dgvScoreList.Rows[position].Cells[1].Value.ToString()).Rows[0][1].ToString();
+            cboClub.Text = bsClubManagementForm.GetSpecificClubName(dgvScoreList.Rows[position].Cells[3].Value.ToString()).Rows[0][1].ToString();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -110,7 +113,7 @@ namespace FootballScheduleManagement
                 //Insert new record to database
                 else
                 {
-                    bSScoresManagementForm.AddData(cboPlayer.SelectedValue.ToString(), txtMatchId.Text, cboClub.SelectedValue.ToString(), txtOwnGoal.Text, txtMinute.Text);
+                    bsScoresManagementForm.AddData(cboPlayer.SelectedValue.ToString(), txtMatchId.Text, cboClub.SelectedValue.ToString(), txtOwnGoal.Text, txtMinute.Text);
                     dgvScoreList.Enabled = true;
                     flag = false;
                 }
@@ -122,7 +125,7 @@ namespace FootballScheduleManagement
                 //Update new record to database
                 else
                 {
-                    bSScoresManagementForm.UpdateData(txtId.Text, cboPlayer.SelectedValue.ToString(), txtMatchId.Text, cboClub.SelectedValue.ToString(), txtOwnGoal.Text, txtMinute.Text);
+                    bsScoresManagementForm.UpdateData(txtId.Text, cboPlayer.SelectedValue.ToString(), txtMatchId.Text, cboClub.SelectedValue.ToString(), txtOwnGoal.Text, txtMinute.Text);
                 }
             }
             btnSave.Enabled = false;
@@ -138,7 +141,7 @@ namespace FootballScheduleManagement
             txtOwnGoal.Enabled = false;
             txtMinute.Enabled = false;
 
-            bSScoresManagementForm.LoadData(ref dgvScoreList);
+            bsScoresManagementForm.LoadData(ref dgvScoreList);
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -173,9 +176,9 @@ namespace FootballScheduleManagement
             this.position = e.RowIndex;
 
             this.txtId.Text = dgvScoreList.Rows[position].Cells[0].Value.ToString();
-            this.cboPlayer.Text = bSScoresManagementForm.GetPlayerName(dgvScoreList.Rows[position].Cells[1].Value.ToString()).Rows[0][1].ToString();
+            this.cboPlayer.Text = bsPlayerManagement.GetPlayerName(dgvScoreList.Rows[position].Cells[1].Value.ToString()).Rows[0][1].ToString();
             this.txtMatchId.Text = dgvScoreList.Rows[position].Cells[2].Value.ToString();
-            this.cboClub.Text = bSScoresManagementForm.GetClubName(dgvScoreList.Rows[position].Cells[3].Value.ToString()).Rows[0][1].ToString();
+            this.cboClub.Text = bsClubManagementForm.GetSpecificClubName(dgvScoreList.Rows[position].Cells[3].Value.ToString()).Rows[0][1].ToString();
             this.txtOwnGoal.Text = dgvScoreList.Rows[position].Cells[4].Value.ToString();
             this.txtMinute.Text = dgvScoreList.Rows[position].Cells[5].Value.ToString();
         }
@@ -198,7 +201,7 @@ namespace FootballScheduleManagement
                 if (txtMatchId.Text != "")
                 {
                     cboClub.Enabled = true;
-                    cboClub.DataSource = bSScoresManagementForm.GetClubNameList(txtMatchId.Text);
+                    cboClub.DataSource = bsClubManagementForm.GetClubNameList(txtMatchId.Text);
                     cboClub.DisplayMember = "name";
                     cboClub.ValueMember = "id";
                 }
@@ -212,7 +215,7 @@ namespace FootballScheduleManagement
                 cboPlayer.Enabled = true;
                 cboPlayer.DisplayMember = "name";
                 cboPlayer.ValueMember = "id";
-                cboPlayer.DataSource = bSScoresManagementForm.GetPlayerNameList(cboClub.SelectedValue.ToString());
+                cboPlayer.DataSource = bsPlayerManagement.GetPlayerNameList(cboClub.SelectedValue.ToString());
             }
         }
     }

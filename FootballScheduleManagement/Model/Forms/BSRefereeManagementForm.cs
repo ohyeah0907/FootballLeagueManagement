@@ -68,5 +68,25 @@ namespace FootballScheduleManagement.Model.Forms
             if (rowsAffect != 0)
                 MessageBox.Show("Update data successfully");
         }
+        public DataTable GetRefereeList()
+        {
+            sqlCommand.Parameters.Clear();
+            string sql = "SELECT * FROM Referee";
+            sqlCommand.CommandText = sql;
+            dataSet = db.ExcecuteDataQuery(sqlCommand);
+            dataTable = dataSet.Tables[0];
+            return dataTable;
+        }
+
+        public DataTable GetSpecificReferee(string id)
+        {
+            sqlCommand.Parameters.Clear();
+            string sql = "SELECT id, name FROM Referee WHERE id = @id";
+            sqlCommand.CommandText = sql;
+            sqlCommand.Parameters.Add("@id", SqlDbType.Int).Value = Convert.ToInt32(id);
+            dataSet = db.ExcecuteDataQuery(sqlCommand);
+            dataTable = dataSet.Tables[0];
+            return dataTable;
+        }
     }
 }

@@ -16,7 +16,7 @@ namespace FootballScheduleManagement
     public partial class RankNormalForm : DevExpress.XtraEditors.XtraForm
     {
         bool flag = false;
-        BSRankManagementForm bSRankManagementForm = new BSRankManagementForm();
+        BSRankNormalForm bSRankManagementForm = new BSRankNormalForm();
 
         public RankNormalForm()
         {

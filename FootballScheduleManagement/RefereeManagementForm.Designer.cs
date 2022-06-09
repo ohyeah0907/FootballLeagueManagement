@@ -61,7 +61,7 @@ namespace FootballScheduleManagement
             this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label3.Location = new System.Drawing.Point(57, 101);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(24, 17);
+            this.label3.Size = new System.Drawing.Size(24, 18);
             this.label3.TabIndex = 116;
             this.label3.Text = "Id:";
             // 
@@ -139,6 +139,8 @@ namespace FootballScheduleManagement
             // 
             // dgvRefereeList
             // 
+            this.dgvRefereeList.AllowUserToAddRows = false;
+            this.dgvRefereeList.AllowUserToDeleteRows = false;
             this.dgvRefereeList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvRefereeList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRefereeList.Location = new System.Drawing.Point(63, 227);
@@ -162,7 +164,7 @@ namespace FootballScheduleManagement
             this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label4.Location = new System.Drawing.Point(810, 98);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(34, 17);
+            this.label4.Size = new System.Drawing.Size(37, 18);
             this.label4.TabIndex = 105;
             this.label4.Text = "Age:";
             // 
@@ -179,7 +181,7 @@ namespace FootballScheduleManagement
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label2.Location = new System.Drawing.Point(472, 101);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 17);
+            this.label2.Size = new System.Drawing.Size(50, 18);
             this.label2.TabIndex = 103;
             this.label2.Text = "Name:";
             // 
@@ -208,7 +210,7 @@ namespace FootballScheduleManagement
             this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label5.Location = new System.Drawing.Point(59, 163);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(89, 17);
+            this.label5.Size = new System.Drawing.Size(94, 18);
             this.label5.TabIndex = 118;
             this.label5.Text = "Date of birth:";
             // 
@@ -219,6 +221,7 @@ namespace FootballScheduleManagement
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1043, 606);
             this.Controls.Add(this.dtpDateOfBirth);
             this.Controls.Add(this.label5);
