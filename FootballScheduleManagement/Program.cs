@@ -18,7 +18,7 @@ namespace FootballScheduleManagement
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new RankNormalForm());
+            Application.Run(new ScoresManagementForm());
         }
     }
 }

@@ -180,6 +180,8 @@ namespace FootballScheduleManagement
             // 
             // dgvScoreList
             // 
+            this.dgvScoreList.AllowUserToAddRows = false;
+            this.dgvScoreList.AllowUserToDeleteRows = false;
             this.dgvScoreList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvScoreList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvScoreList.Location = new System.Drawing.Point(58, 301);

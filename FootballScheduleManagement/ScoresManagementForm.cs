@@ -16,6 +16,7 @@ namespace FootballScheduleManagement
     public partial class ScoresManagementForm : DevExpress.XtraEditors.XtraForm
     {
         bool flag = false;
+        int position;
         BSScoresManagementForm bSScoresManagementForm = new BSScoresManagementForm();
 
         public ScoresManagementForm()
@@ -90,6 +91,14 @@ namespace FootballScheduleManagement
             txtOwnGoal.Enabled = true;
             txtMinute.Enabled = true;
             cboPlayer.Focus();
+            cboClub.DataSource = bSScoresManagementForm.GetClubName(txtMatchId.Text);
+            cboClub.DisplayMember = "name";
+            cboClub.ValueMember = "id";
+            cboPlayer.DataSource = bSScoresManagementForm.GetPlayerNameList(dgvScoreList.Rows[position].Cells[3].Value.ToString());
+            cboPlayer.DisplayMember = "name";
+            cboPlayer.ValueMember = "id";
+            cboPlayer.Text = bSScoresManagementForm.GetPlayerName(dgvScoreList.Rows[position].Cells[1].Value.ToString()).Rows[0][1].ToString();
+            cboClub.Text = bSScoresManagementForm.GetClubName(dgvScoreList.Rows[position].Cells[3].Value.ToString()).Rows[0][1].ToString();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -101,7 +110,7 @@ namespace FootballScheduleManagement
                 //Insert new record to database
                 else
                 {
-                    bSScoresManagementForm.AddData(cboPlayer.Text, txtMatchId.Text, cboClub.Text, txtOwnGoal.Text, txtMinute.Text);
+                    bSScoresManagementForm.AddData(cboPlayer.SelectedValue.ToString(), txtMatchId.Text, cboClub.SelectedValue.ToString(), txtOwnGoal.Text, txtMinute.Text);
                     dgvScoreList.Enabled = true;
                     flag = false;
                 }
@@ -113,7 +122,7 @@ namespace FootballScheduleManagement
                 //Update new record to database
                 else
                 {
-                    bSScoresManagementForm.UpdateData(txtId.Text, cboPlayer.Text, txtMatchId.Text, cboClub.Text, txtOwnGoal.Text, txtMinute.Text);
+                    bSScoresManagementForm.UpdateData(txtId.Text, cboPlayer.SelectedValue.ToString(), txtMatchId.Text, cboClub.SelectedValue.ToString(), txtOwnGoal.Text, txtMinute.Text);
                 }
             }
             btnSave.Enabled = false;
@@ -161,12 +170,12 @@ namespace FootballScheduleManagement
 
         private void dgvScoreList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int position = e.RowIndex;
+            this.position = e.RowIndex;
 
             this.txtId.Text = dgvScoreList.Rows[position].Cells[0].Value.ToString();
-            this.cboPlayer.Text = dgvScoreList.Rows[position].Cells[1].Value.ToString();
+            this.cboPlayer.Text = bSScoresManagementForm.GetPlayerName(dgvScoreList.Rows[position].Cells[1].Value.ToString()).Rows[0][1].ToString();
             this.txtMatchId.Text = dgvScoreList.Rows[position].Cells[2].Value.ToString();
-            this.cboClub.Text = dgvScoreList.Rows[position].Cells[3].Value.ToString();
+            this.cboClub.Text = bSScoresManagementForm.GetClubName(dgvScoreList.Rows[position].Cells[3].Value.ToString()).Rows[0][1].ToString();
             this.txtOwnGoal.Text = dgvScoreList.Rows[position].Cells[4].Value.ToString();
             this.txtMinute.Text = dgvScoreList.Rows[position].Cells[5].Value.ToString();
         }
@@ -184,12 +193,15 @@ namespace FootballScheduleManagement
 
         private void txtMatchId_TextChanged(object sender, EventArgs e)
         {
-            if (txtMatchId.Text != "")
+            if(btnAdd.Enabled == false || btnDelete.Enabled == false)
             {
-                cboClub.Enabled = true;
-                cboClub.DataSource = bSScoresManagementForm.GetClubName(txtMatchId.Text);
-                cboClub.DisplayMember = "name";
-                cboClub.ValueMember = "id";
+                if (txtMatchId.Text != "")
+                {
+                    cboClub.Enabled = true;
+                    cboClub.DataSource = bSScoresManagementForm.GetClubNameList(txtMatchId.Text);
+                    cboClub.DisplayMember = "name";
+                    cboClub.ValueMember = "id";
+                }
             }
         }
 
@@ -197,11 +209,10 @@ namespace FootballScheduleManagement
         {
             if (cboClub.SelectedValue != null)
             {
-                MessageBox.Show(Convert.ToString(cboClub.SelectedValue));
                 cboPlayer.Enabled = true;
                 cboPlayer.DisplayMember = "name";
                 cboPlayer.ValueMember = "id";
-                cboPlayer.DataSource = bSScoresManagementForm.GetPlayerName(cboClub.SelectedValue.ToString());
+                cboPlayer.DataSource = bSScoresManagementForm.GetPlayerNameList(cboClub.SelectedValue.ToString());
             }
         }
     }

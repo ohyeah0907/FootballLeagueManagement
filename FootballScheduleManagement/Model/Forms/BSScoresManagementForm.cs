@@ -74,18 +74,18 @@ namespace FootballScheduleManagement.Model.Forms
                 MessageBox.Show("Update data successfully");
         }
 
-        public DataTable GetPlayerName(string clubId)
+        public DataTable GetPlayerNameList(string clubId)
         {
-            sqlCommand.Parameters.Clear();
             string sql = "SELECT name, id FROM Player Where clubId = @clubId";
             sqlCommand.CommandText = sql;
             sqlCommand.Parameters.Add("@clubId", SqlDbType.Int).Value = Convert.ToInt32(clubId);
             dataSet = db.ExcecuteDataQuery(sqlCommand);
             dataTable = dataSet.Tables[0];
+            sqlCommand.Parameters.Clear();
             return dataTable;
         }
 
-        public DataTable GetClubName(string matchId)
+        public DataTable GetClubNameList(string matchId)
         {
             DataTable dataTable = new DataTable();
             dataTable.Columns.Add("name", typeof(string));
@@ -102,6 +102,29 @@ namespace FootballScheduleManagement.Model.Forms
             sqlCommand.Parameters.Add("@matchId", SqlDbType.Int).Value = Convert.ToInt32(matchId);
             dataSet = db.ExcecuteDataQuery(sqlCommand);
             dataTable.Merge(dataSet.Tables[0]);
+            sqlCommand.Parameters.Clear();
+            return dataTable;
+        }
+
+        public DataTable GetClubName(string id)
+        {
+            string sql = "SELECT id, name FROM Club WHERE id = @id";
+            sqlCommand.CommandText = sql;
+            sqlCommand.Parameters.Add("@id", SqlDbType.Int).Value = Convert.ToInt32(id);
+            dataSet = db.ExcecuteDataQuery(sqlCommand);
+            dataTable = dataSet.Tables[0];
+            sqlCommand.Parameters.Clear();
+            return dataTable;
+        }
+
+        public DataTable GetPlayerName(string id)
+        {
+            string sql = "SELECT id, name FROM Player WHERE id = @id";
+            sqlCommand.CommandText = sql;
+            sqlCommand.Parameters.Add("@id", SqlDbType.Int).Value = Convert.ToInt32(id);
+            dataSet = db.ExcecuteDataQuery(sqlCommand);
+            dataTable = dataSet.Tables[0];
+            sqlCommand.Parameters.Clear();
             return dataTable;
         }
     }
