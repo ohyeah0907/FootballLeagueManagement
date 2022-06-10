@@ -39,7 +39,6 @@ namespace FootballScheduleManagement
             cboFirstClub.Text = "";
             cboReferee.Text = "";
             cboSecondClub.Text = "";
-
             txtPeriodTime.Focus();
 
             txtId.Enabled = false;
@@ -48,7 +47,6 @@ namespace FootballScheduleManagement
             cboFirstClub.Enabled = true;
             cboReferee.Enabled = true;
             cboSecondClub.Enabled = true;
-
             dgvMatchList.Enabled = false;
 
             flag = true;
@@ -128,18 +126,12 @@ namespace FootballScheduleManagement
             cboSecondClub.Enabled = true;
 
             dgvMatchList.Enabled = false;
-
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
             bsMatchManagement.deleteMatch(Int32.Parse( txtId.Text));
             bsMatchManagement.loadMatch(ref dgvMatchList);
-        }
-
-        private void dgvMatchList_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void MatchManagementForm_Load(object sender, EventArgs e)
@@ -186,8 +178,6 @@ namespace FootballScheduleManagement
             this.cboSecondClub.Text = bsClubManagementForm.GetSpecificClubName(dgvMatchList.Rows[position].Cells[3].Value.ToString()).Rows[0][1].ToString();
             this.dtpDateOfMatch.Value = (DateTime)dgvMatchList.Rows[position].Cells[4].Value;
             this.txtPeriodTime.Text = dgvMatchList.Rows[position].Cells[5].Value.ToString();
-            
-           
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -210,9 +200,7 @@ namespace FootballScheduleManagement
             cboFirstClub.Text = "";
             cboReferee.Text = "";
             cboSecondClub.Text = "";
-
             txtPeriodTime.Focus();
-
             dgvMatchList.Enabled = true;
 
             flag = false;

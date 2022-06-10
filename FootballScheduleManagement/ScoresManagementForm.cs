@@ -173,14 +173,21 @@ namespace FootballScheduleManagement
 
         private void dgvScoreList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            this.position = e.RowIndex;
+            try
+            {
+                this.position = e.RowIndex;
 
-            this.txtId.Text = dgvScoreList.Rows[position].Cells[0].Value.ToString();
-            this.cboPlayer.Text = bsPlayerManagement.GetPlayerName(dgvScoreList.Rows[position].Cells[1].Value.ToString()).Rows[0][1].ToString();
-            this.txtMatchId.Text = dgvScoreList.Rows[position].Cells[2].Value.ToString();
-            this.cboClub.Text = bsClubManagementForm.GetSpecificClubName(dgvScoreList.Rows[position].Cells[3].Value.ToString()).Rows[0][1].ToString();
-            this.txtOwnGoal.Text = dgvScoreList.Rows[position].Cells[4].Value.ToString();
-            this.txtMinute.Text = dgvScoreList.Rows[position].Cells[5].Value.ToString();
+                this.txtId.Text = dgvScoreList.Rows[position].Cells[0].Value.ToString();
+                this.cboPlayer.Text = bsPlayerManagement.GetPlayerName(dgvScoreList.Rows[position].Cells[1].Value.ToString()).Rows[0][1].ToString();
+                this.txtMatchId.Text = dgvScoreList.Rows[position].Cells[2].Value.ToString();
+                this.cboClub.Text = bsClubManagementForm.GetSpecificClubName(dgvScoreList.Rows[position].Cells[3].Value.ToString()).Rows[0][1].ToString();
+                this.txtOwnGoal.Text = dgvScoreList.Rows[position].Cells[4].Value.ToString();
+                this.txtMinute.Text = dgvScoreList.Rows[position].Cells[5].Value.ToString();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            } 
         }
 
         public bool CheckEmpty()

@@ -136,7 +136,6 @@ namespace FootballScheduleManagement
             this.dgvMatchList.Size = new System.Drawing.Size(1094, 274);
             this.dgvMatchList.TabIndex = 61;
             this.dgvMatchList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMatchList_CellClick);
-            this.dgvMatchList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMatchList_CellContentClick);
             // 
             // dtpDateOfMatch
             // 

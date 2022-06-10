@@ -76,6 +76,7 @@ namespace FootballScheduleManagement
             this.btnExport.TabIndex = 12;
             this.btnExport.Text = "Export to XLS";
             this.btnExport.UseVisualStyleBackColor = false;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
             // PlayerNormalForm
             // 
@@ -89,6 +90,7 @@ namespace FootballScheduleManagement
             this.Controls.Add(this.label1);
             this.Name = "PlayerNormalForm";
             this.Text = "PlayerNormalForm";
+            this.Load += new System.EventHandler(this.PlayerNormalForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gcPlayerList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);

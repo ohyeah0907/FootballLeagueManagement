@@ -17,7 +17,6 @@ namespace FootballScheduleManagement
     {
         bool flag = false;
         BSRankNormalForm bSRankManagementForm = new BSRankNormalForm();
-
         public RankNormalForm()
         {
             InitializeComponent();

@@ -152,6 +152,8 @@
     <Compile Include="Model\Forms\BSMatchManagement.cs" />
     <Compile Include="Model\Forms\BSMatchNormalForm.cs" />
     <Compile Include="Model\Forms\BSPlayerManagement.cs" />
+    <Compile Include="Model\Forms\BSPlayerManagementForm.cs" />
+    <Compile Include="Model\Forms\BSPlayerNormalForm.cs" />
     <Compile Include="Model\Forms\BSRankNormalForm.cs" />
     <Compile Include="Model\Forms\BSRefereeManagementForm.cs" />
     <Compile Include="Model\Forms\BSScoresManagementForm.cs" />

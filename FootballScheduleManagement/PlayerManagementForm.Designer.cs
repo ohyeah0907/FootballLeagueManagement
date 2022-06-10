@@ -81,6 +81,7 @@ namespace FootballScheduleManagement
             this.btnClose.TabIndex = 93;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnCancel
             // 
@@ -92,6 +93,7 @@ namespace FootballScheduleManagement
             this.btnCancel.TabIndex = 92;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
@@ -103,6 +105,7 @@ namespace FootballScheduleManagement
             this.btnSave.TabIndex = 91;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnEdit
             // 
@@ -114,6 +117,7 @@ namespace FootballScheduleManagement
             this.btnEdit.TabIndex = 90;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnDelete
             // 
@@ -125,6 +129,7 @@ namespace FootballScheduleManagement
             this.btnDelete.TabIndex = 89;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnAdd
             // 
@@ -136,9 +141,12 @@ namespace FootballScheduleManagement
             this.btnAdd.TabIndex = 88;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // dgvClubList
             // 
+            this.dgvClubList.AllowUserToAddRows = false;
+            this.dgvClubList.AllowUserToDeleteRows = false;
             this.dgvClubList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvClubList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvClubList.Location = new System.Drawing.Point(61, 284);
@@ -147,6 +155,7 @@ namespace FootballScheduleManagement
             this.dgvClubList.RowTemplate.Height = 24;
             this.dgvClubList.Size = new System.Drawing.Size(926, 274);
             this.dgvClubList.TabIndex = 87;
+            this.dgvClubList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPlayerList_CellClick);
             // 
             // dtpDateOfBirth
             // 
@@ -297,6 +306,7 @@ namespace FootballScheduleManagement
             this.Font = new System.Drawing.Font("Yu Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "PlayerManagementForm";
             this.Text = "PlayerManagementForm";
+            this.Load += new System.EventHandler(this.PlayerManagementForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvClubList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

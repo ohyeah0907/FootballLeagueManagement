@@ -154,12 +154,19 @@ namespace FootballScheduleManagement
 
         private void dgvRefereeList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int position = e.RowIndex;
+            try
+            {
+                int position = e.RowIndex;
 
-            this.txtId.Text = dgvRefereeList.Rows[position].Cells[0].Value.ToString();
-            this.txtName.Text = dgvRefereeList.Rows[position].Cells[1].Value.ToString();
-            this.txtAge.Text = dgvRefereeList.Rows[position].Cells[2].Value.ToString();
-            this.dtpDateOfBirth.Value = (DateTime)dgvRefereeList.Rows[position].Cells[3].Value;
+                this.txtId.Text = dgvRefereeList.Rows[position].Cells[0].Value.ToString();
+                this.txtName.Text = dgvRefereeList.Rows[position].Cells[1].Value.ToString();
+                this.txtAge.Text = dgvRefereeList.Rows[position].Cells[2].Value.ToString();
+                this.dtpDateOfBirth.Value = (DateTime)dgvRefereeList.Rows[position].Cells[3].Value;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

@@ -63,7 +63,6 @@ namespace FootballScheduleManagement.Model.Forms
             if (rowsAffect != 0)
                 MessageBox.Show("Insert data successfully");
         }
-
         public void DeleteData(string id)
         {
             sqlCommand.Parameters.Clear();
@@ -94,7 +93,6 @@ namespace FootballScheduleManagement.Model.Forms
             if (rowsAffect != 0)
                 MessageBox.Show("Update data successfully");
         }
-
         public DataTable GetClubListWithCondition(string condition)
         {
             sqlCommand.Parameters.Clear();
@@ -125,7 +123,6 @@ namespace FootballScheduleManagement.Model.Forms
             sqlCommand.Parameters.Clear();
             return dataTable;
         }
-
         public DataTable GetSpecificClubName(string id)
         {
             string sql = "SELECT id, name FROM Club WHERE id = @id";

@@ -22,6 +22,7 @@ namespace FootballScheduleManagement
         ClubManagementForm clubManagementForm;
         ScoresManagementForm scoresManagementForm;
         RefereeManagementForm refereeManagementForm;
+        PlayerManagementForm playerManagementForm;
         NormallyForm normallyForm;
 
         public ManagementForm()
@@ -36,6 +37,7 @@ namespace FootballScheduleManagement
             matchManagementForm = new MatchManagementForm();
             scoresManagementForm = new ScoresManagementForm();
             refereeManagementForm = new RefereeManagementForm();
+            playerManagementForm = new PlayerManagementForm();
             normallyForm = new NormallyForm();
         }
 
@@ -80,7 +82,12 @@ namespace FootballScheduleManagement
 
         private void tsmiPlayerManagement_Click(object sender, EventArgs e)
         {
-
+            index = 2;
+            CloseFormsExcept(this, playerManagementForm);
+            if (playerManagementForm.IsDisposed == true)
+                playerManagementForm = new PlayerManagementForm();
+            playerManagementForm.MdiParent = this;
+            bsManagementForm.RedirectForm(ref user, playerManagementForm, index);
         }
 
         private void tsmiNormallyForm_Click(object sender, EventArgs e)

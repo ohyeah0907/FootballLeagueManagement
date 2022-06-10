@@ -64,8 +64,8 @@ namespace FootballScheduleManagement
             txtCoach.Enabled = true;
             txtNation.Enabled = true;
             picAvatar.Enabled = true;
-
             dgvClubList.Enabled = false;
+
             flag = true;
         }
 
@@ -168,16 +168,23 @@ namespace FootballScheduleManagement
 
         private void dgvClubList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int position = e.RowIndex;
+            try
+            {
+                int position = e.RowIndex;
 
-            this.txtId.Text = dgvClubList.Rows[position].Cells[0].Value.ToString();
-            this.txtName.Text = dgvClubList.Rows[position].Cells[1].Value.ToString();
-            this.txtManager.Text = dgvClubList.Rows[position].Cells[2].Value.ToString();
-            this.dtpFoundingDate.Value = (DateTime)dgvClubList.Rows[position].Cells[3].Value;
-            this.txtCoach.Text = dgvClubList.Rows[position].Cells[4].Value.ToString();
-            this.txtNation.Text = dgvClubList.Rows[position].Cells[5].Value.ToString();
-            MemoryStream ms = new MemoryStream((byte[])dgvClubList.Rows[position].Cells[6].Value);
-            this.picAvatar.Image = Image.FromStream(ms);
+                this.txtId.Text = dgvClubList.Rows[position].Cells[0].Value.ToString();
+                this.txtName.Text = dgvClubList.Rows[position].Cells[1].Value.ToString();
+                this.txtManager.Text = dgvClubList.Rows[position].Cells[2].Value.ToString();
+                this.dtpFoundingDate.Value = (DateTime)dgvClubList.Rows[position].Cells[3].Value;
+                this.txtCoach.Text = dgvClubList.Rows[position].Cells[4].Value.ToString();
+                this.txtNation.Text = dgvClubList.Rows[position].Cells[5].Value.ToString();
+                MemoryStream ms = new MemoryStream((byte[])dgvClubList.Rows[position].Cells[6].Value);
+                this.picAvatar.Image = Image.FromStream(ms);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         public bool CheckEmpty()

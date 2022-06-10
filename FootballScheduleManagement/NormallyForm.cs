@@ -19,6 +19,7 @@ namespace FootballScheduleManagement
         ManagementForm managementForm;
         MatchNormalForm matchNormalForm;
         RankNormalForm rankNormalForm;
+        PlayerNormalForm playerNormalForm;
         public NormallyForm()
         {
             InitializeComponent();
@@ -26,6 +27,7 @@ namespace FootballScheduleManagement
             managementForm = new ManagementForm();
             matchNormalForm = new MatchNormalForm();
             rankNormalForm = new RankNormalForm();
+            playerNormalForm = new PlayerNormalForm();
         }
         private void NormallyForm_Load(object sender, EventArgs e)
         {
@@ -66,7 +68,12 @@ namespace FootballScheduleManagement
 
         private void tsmiPlayerList_Click(object sender, EventArgs e)
         {
-
+            CloseFormsExcept(this, playerNormalForm);
+            if (playerNormalForm.IsDisposed == true)
+                playerNormalForm = new PlayerNormalForm();
+            playerNormalForm.MdiParent = this;
+            playerNormalForm.Dock = DockStyle.Fill;
+            playerNormalForm.Show();
         }
 
         private void tsmiRank_Click(object sender, EventArgs e)
