@@ -1,0 +1,271 @@
+﻿<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0E3829E8-D37F-4776-8623-307A3E415035}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FootballScheduleManagement</RootNamespace>
+    <AssemblyName>FootballScheduleManagement</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.5.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.5\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.BonusSkins.v19.2" />
+    <Reference Include="DevExpress.Data.v19.2" />
+    <Reference Include="DevExpress.Utils.v19.2" />
+    <Reference Include="DevExpress.Sparkline.v19.2.Core" />
+    <Reference Include="DevExpress.XtraEditors.v19.2" />
+    <Reference Include="DevExpress.Printing.v19.2.Core" />
+    <Reference Include="DevExpress.XtraGrid.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="Google.Protobuf, Version=3.19.4.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.19.4\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4, Version=1.2.6.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.1.2.6\lib\net46\K4os.Compression.LZ4.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.2.6.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.Streams.1.2.6\lib\net46\K4os.Compression.LZ4.Streams.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Hash.xxHash, Version=1.0.6.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Hash.xxHash.1.0.6\lib\net46\K4os.Hash.xxHash.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.29.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.29\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Ubiety.Dns.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.29\lib\net452\Ubiety.Dns.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="ZstdNet, Version=1.4.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.29\lib\net452\ZstdNet.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClubManagementForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClubManagementForm.Designer.cs">
+      <DependentUpon>ClubManagementForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClubNormalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClubNormalForm.Designer.cs">
+      <DependentUpon>ClubNormalForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DB\AdapterPattern\IDBHandler.cs" />
+    <Compile Include="DB\AdapterPattern\MySqlAdapter.cs" />
+    <Compile Include="DB\AdapterPattern\MySqlServer.cs" />
+    <Compile Include="DB\AdapterPattern\SqlServer.cs" />
+    <Compile Include="DB\AdapterPattern\SqlServerAdapter.cs" />
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagementForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagementForm.Designer.cs">
+      <DependentUpon>ManagementForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MatchDetailNormalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MatchDetailNormalForm.Designer.cs">
+      <DependentUpon>MatchDetailNormalForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MatchNormalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MatchNormalForm.Designer.cs">
+      <DependentUpon>MatchNormalForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\BridgePattern\IForm.cs" />
+    <Compile Include="Model\BridgePattern\ManagerForm.cs" />
+    <Compile Include="Model\BridgePattern\NormalForm.cs" />
+    <Compile Include="Model\FactoryPattern\CreateUser.cs" />
+    <Compile Include="Model\FactoryPattern\ManagerUserCreator.cs" />
+    <Compile Include="Model\FactoryPattern\NormalUserCreator.cs" />
+    <Compile Include="Model\Forms\BSClubManagementForm.cs" />
+    <Compile Include="Model\Forms\BSClubNormalForm.cs" />
+    <Compile Include="Model\Forms\BSLoginForm.cs" />
+    <Compile Include="Model\Forms\BSManagementForm.cs" />
+    <Compile Include="Model\Forms\BSMatchManagement.cs" />
+    <Compile Include="Model\Forms\BSMatchNormalForm.cs" />
+    <Compile Include="Model\Forms\BSNormallyForm.cs" />
+    <Compile Include="Model\Manager.cs" />
+    <Compile Include="Model\NormalUser.cs" />
+    <Compile Include="Model\Permission.cs" />
+    <Compile Include="Model\User.cs" />
+    <Compile Include="NormallyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NormallyForm.Designer.cs">
+      <DependentUpon>NormallyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PlayerNormalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlayerNormalForm.Designer.cs">
+      <DependentUpon>PlayerNormalForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="MatchManagementForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MatchManagementForm.Designer.cs">
+      <DependentUpon>MatchManagementForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PlayerManagementForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlayerManagementForm.Designer.cs">
+      <DependentUpon>PlayerManagementForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RankNormalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RankNormalForm.Designer.cs">
+      <DependentUpon>RankNormalForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RefereeManagementForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RefereeManagementForm.Designer.cs">
+      <DependentUpon>RefereeManagementForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ScoresManagementForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScoresManagementForm.Designer.cs">
+      <DependentUpon>ScoresManagementForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ClubManagementForm.resx">
+      <DependentUpon>ClubManagementForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClubNormalForm.resx">
+      <DependentUpon>ClubNormalForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagementForm.resx">
+      <DependentUpon>ManagementForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MatchDetailNormalForm.resx">
+      <DependentUpon>MatchDetailNormalForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MatchNormalForm.resx">
+      <DependentUpon>MatchNormalForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NormallyForm.resx">
+      <DependentUpon>NormallyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlayerManagementForm.resx">
+      <DependentUpon>PlayerManagementForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlayerNormalForm.resx">
+      <DependentUpon>PlayerNormalForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="MatchManagementForm.resx">
+      <DependentUpon>MatchManagementForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RankNormalForm.resx">
+      <DependentUpon>RankNormalForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RefereeManagementForm.resx">
+      <DependentUpon>RefereeManagementForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScoresManagementForm.resx">
+      <DependentUpon>ScoresManagementForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
