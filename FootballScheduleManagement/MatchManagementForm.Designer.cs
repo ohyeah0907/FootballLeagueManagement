@@ -55,6 +55,7 @@ namespace FootballScheduleManagement
             // btnClose
             // 
             this.btnClose.BackColor = System.Drawing.Color.Gray;
+            this.btnClose.ForeColor = System.Drawing.Color.White;
             this.btnClose.Location = new System.Drawing.Point(1069, 571);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(86, 46);
@@ -65,6 +66,7 @@ namespace FootballScheduleManagement
             // btnCancel
             // 
             this.btnCancel.BackColor = System.Drawing.Color.Gray;
+            this.btnCancel.ForeColor = System.Drawing.Color.White;
             this.btnCancel.Location = new System.Drawing.Point(866, 571);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(97, 46);
@@ -76,6 +78,7 @@ namespace FootballScheduleManagement
             // btnSave
             // 
             this.btnSave.BackColor = System.Drawing.Color.Gray;
+            this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.Location = new System.Drawing.Point(663, 571);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(94, 46);
@@ -87,6 +90,7 @@ namespace FootballScheduleManagement
             // btnEdit
             // 
             this.btnEdit.BackColor = System.Drawing.Color.Gray;
+            this.btnEdit.ForeColor = System.Drawing.Color.White;
             this.btnEdit.Location = new System.Drawing.Point(471, 571);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(91, 46);
@@ -98,6 +102,7 @@ namespace FootballScheduleManagement
             // btnDelete
             // 
             this.btnDelete.BackColor = System.Drawing.Color.Gray;
+            this.btnDelete.ForeColor = System.Drawing.Color.White;
             this.btnDelete.Location = new System.Drawing.Point(269, 571);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(103, 46);
@@ -109,6 +114,7 @@ namespace FootballScheduleManagement
             // btnAdd
             // 
             this.btnAdd.BackColor = System.Drawing.Color.Gray;
+            this.btnAdd.ForeColor = System.Drawing.Color.White;
             this.btnAdd.Location = new System.Drawing.Point(61, 571);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(102, 46);

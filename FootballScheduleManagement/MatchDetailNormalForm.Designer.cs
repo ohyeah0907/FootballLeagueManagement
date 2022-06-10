@@ -101,7 +101,7 @@ namespace FootballScheduleManagement
             this.lblReferee.AutoSize = true;
             this.lblReferee.Font = new System.Drawing.Font("Yu Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblReferee.ForeColor = System.Drawing.Color.White;
-            this.lblReferee.Location = new System.Drawing.Point(425, 240);
+            this.lblReferee.Location = new System.Drawing.Point(376, 240);
             this.lblReferee.Name = "lblReferee";
             this.lblReferee.Size = new System.Drawing.Size(59, 18);
             this.lblReferee.TabIndex = 10;
@@ -112,7 +112,7 @@ namespace FootballScheduleManagement
             this.lblDateMatch.AutoSize = true;
             this.lblDateMatch.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDateMatch.ForeColor = System.Drawing.Color.White;
-            this.lblDateMatch.Location = new System.Drawing.Point(406, 191);
+            this.lblDateMatch.Location = new System.Drawing.Point(374, 191);
             this.lblDateMatch.Name = "lblDateMatch";
             this.lblDateMatch.Size = new System.Drawing.Size(119, 26);
             this.lblDateMatch.TabIndex = 11;

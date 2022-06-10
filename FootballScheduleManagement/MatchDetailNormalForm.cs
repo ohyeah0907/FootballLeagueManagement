@@ -26,7 +26,6 @@ namespace FootballScheduleManagement
         public MatchDetailNormalForm()
         {
             InitializeComponent();
-           
         }
 
         private void MatchDetailNormalForm_Load(object sender, EventArgs e)

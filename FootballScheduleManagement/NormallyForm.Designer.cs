@@ -34,7 +34,6 @@ namespace FootballScheduleManagement
             this.tsmiMatchList = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiClubList = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiPlayerList = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiMatchDetail = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiRank = new System.Windows.Forms.ToolStripMenuItem();
             this.tsbtnBack = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
@@ -52,7 +51,6 @@ namespace FootballScheduleManagement
             this.tsmiMatchList,
             this.tsmiClubList,
             this.tsmiPlayerList,
-            this.tsmiMatchDetail,
             this.tsmiRank});
             this.mnsNavigation.Location = new System.Drawing.Point(0, 0);
             this.mnsNavigation.Name = "mnsNavigation";
@@ -80,13 +78,6 @@ namespace FootballScheduleManagement
             this.tsmiPlayerList.Size = new System.Drawing.Size(86, 24);
             this.tsmiPlayerList.Text = "&Player list";
             this.tsmiPlayerList.Click += new System.EventHandler(this.tsmiPlayerList_Click);
-            // 
-            // tsmiMatchDetail
-            // 
-            this.tsmiMatchDetail.Name = "tsmiMatchDetail";
-            this.tsmiMatchDetail.Size = new System.Drawing.Size(106, 24);
-            this.tsmiMatchDetail.Text = "Match &detail";
-            this.tsmiMatchDetail.Click += new System.EventHandler(this.tsmiMatchDetail_Click);
             // 
             // tsmiRank
             // 
@@ -170,7 +161,6 @@ namespace FootballScheduleManagement
         private System.Windows.Forms.ToolStripMenuItem tsmiClubList;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem tsmiPlayerList;
-        private System.Windows.Forms.ToolStripMenuItem tsmiMatchDetail;
         private System.Windows.Forms.ToolStripMenuItem tsmiRank;
         private System.Windows.Forms.ToolStripButton tsbtnBack;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;

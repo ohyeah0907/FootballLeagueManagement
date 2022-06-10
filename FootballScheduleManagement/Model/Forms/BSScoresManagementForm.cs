@@ -33,6 +33,7 @@ namespace FootballScheduleManagement.Model.Forms
         }
         public void AddData(string playerId, string matchId, string clubId, string ownGoal, string minute)
         {
+            sqlCommand.Parameters.Clear();
             string sql = "INSERT INTO Scores(playerId, matchId, clubId, ownGoal, minute) VALUES(@playerId, @matchId, @clubId, @ownGoal, @minute)";
             sqlCommand.CommandText = sql;
             sqlCommand.Parameters.Add("@playerId", SqlDbType.Int).Value = Convert.ToInt32(playerId);
@@ -48,6 +49,7 @@ namespace FootballScheduleManagement.Model.Forms
 
         public void DeleteData(string id)
         {
+            sqlCommand.Parameters.Clear();
             string sql = "DELETE FROM Scores WHERE id = @id";
             sqlCommand.CommandText = sql;
             sqlCommand.Parameters.Add("@id", SqlDbType.Int).Value = Convert.ToInt32(id);
@@ -60,6 +62,7 @@ namespace FootballScheduleManagement.Model.Forms
 
         public void UpdateData(string id, string playerId, string matchId, string clubId, string ownGoal, string minute)
         {
+            sqlCommand.Parameters.Clear();
             string sql = "UPDATE Scores SET  playerId = @playerId, matchId = @matchId, clubId = @clubId, ownGoal = @ownGoal, minute = @minute WHERE id = @id";
             sqlCommand.CommandText = sql;
             sqlCommand.Parameters.Add("@playerId", SqlDbType.Int).Value = Convert.ToInt32(playerId);

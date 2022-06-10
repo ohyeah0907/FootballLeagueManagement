@@ -66,6 +66,8 @@ namespace FootballScheduleManagement
             matchDetailNormalForm.dateMatch = (DateTime)dt["dateMatch"];
             matchDetailNormalForm.periodTime = dt["periodTime"].ToString();
             matchDetailNormalForm.Show();
+            matchDetailNormalForm.MdiParent = this.MdiParent;
+            matchDetailNormalForm.Dock = DockStyle.Fill;
             this.Hide();
         }
     }

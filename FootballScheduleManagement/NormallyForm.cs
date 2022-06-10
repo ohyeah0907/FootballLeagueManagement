@@ -69,11 +69,6 @@ namespace FootballScheduleManagement
 
         }
 
-        private void tsmiMatchDetail_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void tsmiRank_Click(object sender, EventArgs e)
         {
             CloseFormsExcept(this, rankNormalForm);

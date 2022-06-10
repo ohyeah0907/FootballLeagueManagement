@@ -46,7 +46,7 @@ namespace FootballScheduleManagement
             this.btnLogin.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnLogin.Location = new System.Drawing.Point(6, 204);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(303, 62);
+            this.btnLogin.Size = new System.Drawing.Size(287, 62);
             this.btnLogin.TabIndex = 26;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = false;
@@ -87,17 +87,16 @@ namespace FootballScheduleManagement
             // 
             this.txtUsername.Location = new System.Drawing.Point(6, 33);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(344, 28);
+            this.txtUsername.Size = new System.Drawing.Size(342, 28);
             this.txtUsername.TabIndex = 27;
-            this.txtUsername.Text = "nguyenthanhphat";
             // 
             // txtPassword
             // 
             this.txtPassword.Location = new System.Drawing.Point(6, 137);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(344, 28);
+            this.txtPassword.Size = new System.Drawing.Size(342, 28);
             this.txtPassword.TabIndex = 28;
-            this.txtPassword.Text = "12345";
+            this.txtPassword.UseSystemPasswordChar = true;
             // 
             // panel1
             // 
@@ -106,9 +105,9 @@ namespace FootballScheduleManagement
             this.panel1.Controls.Add(this.txtPassword);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.txtUsername);
-            this.panel1.Location = new System.Drawing.Point(288, 141);
+            this.panel1.Location = new System.Drawing.Point(296, 143);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(303, 267);
+            this.panel1.Size = new System.Drawing.Size(298, 267);
             this.panel1.TabIndex = 29;
             // 
             // LoginForm
