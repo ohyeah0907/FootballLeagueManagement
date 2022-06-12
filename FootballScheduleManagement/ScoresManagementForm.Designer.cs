@@ -54,7 +54,7 @@ namespace FootballScheduleManagement
             // 
             // txtMinute
             // 
-            this.txtMinute.Location = new System.Drawing.Point(741, 246);
+            this.txtMinute.Location = new System.Drawing.Point(759, 248);
             this.txtMinute.Name = "txtMinute";
             this.txtMinute.Size = new System.Drawing.Size(283, 28);
             this.txtMinute.TabIndex = 107;
@@ -64,7 +64,7 @@ namespace FootballScheduleManagement
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Yu Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label8.Location = new System.Drawing.Point(584, 254);
+            this.label8.Location = new System.Drawing.Point(579, 238);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(58, 18);
             this.label8.TabIndex = 106;
@@ -82,7 +82,7 @@ namespace FootballScheduleManagement
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Yu Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label7.Location = new System.Drawing.Point(55, 253);
+            this.label7.Location = new System.Drawing.Point(55, 238);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(73, 18);
             this.label7.TabIndex = 104;
@@ -100,7 +100,7 @@ namespace FootballScheduleManagement
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Yu Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label3.Location = new System.Drawing.Point(55, 98);
+            this.label3.Location = new System.Drawing.Point(55, 94);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(24, 18);
             this.label3.TabIndex = 100;
@@ -110,7 +110,7 @@ namespace FootballScheduleManagement
             // 
             this.btnClose.BackColor = System.Drawing.Color.Gray;
             this.btnClose.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnClose.Location = new System.Drawing.Point(938, 610);
+            this.btnClose.Location = new System.Drawing.Point(956, 610);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(86, 46);
             this.btnClose.TabIndex = 99;
@@ -188,7 +188,7 @@ namespace FootballScheduleManagement
             this.dgvScoreList.Name = "dgvScoreList";
             this.dgvScoreList.RowHeadersWidth = 51;
             this.dgvScoreList.RowTemplate.Height = 24;
-            this.dgvScoreList.Size = new System.Drawing.Size(966, 274);
+            this.dgvScoreList.Size = new System.Drawing.Size(984, 274);
             this.dgvScoreList.TabIndex = 93;
             this.dgvScoreList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvScoreList_CellClick);
             // 
@@ -197,7 +197,7 @@ namespace FootballScheduleManagement
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Yu Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label4.Location = new System.Drawing.Point(55, 176);
+            this.label4.Location = new System.Drawing.Point(55, 164);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(42, 18);
             this.label4.TabIndex = 89;
@@ -205,7 +205,7 @@ namespace FootballScheduleManagement
             // 
             // txtMatchId
             // 
-            this.txtMatchId.Location = new System.Drawing.Point(736, 98);
+            this.txtMatchId.Location = new System.Drawing.Point(755, 94);
             this.txtMatchId.Name = "txtMatchId";
             this.txtMatchId.Size = new System.Drawing.Size(287, 28);
             this.txtMatchId.TabIndex = 88;
@@ -216,7 +216,7 @@ namespace FootballScheduleManagement
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Yu Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(584, 97);
+            this.label2.Location = new System.Drawing.Point(579, 94);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(69, 18);
             this.label2.TabIndex = 87;
@@ -248,7 +248,7 @@ namespace FootballScheduleManagement
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Yu Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label5.Location = new System.Drawing.Point(584, 176);
+            this.label5.Location = new System.Drawing.Point(579, 164);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(53, 18);
             this.label5.TabIndex = 109;
@@ -257,7 +257,7 @@ namespace FootballScheduleManagement
             // cboPlayer
             // 
             this.cboPlayer.FormattingEnabled = true;
-            this.cboPlayer.Location = new System.Drawing.Point(736, 173);
+            this.cboPlayer.Location = new System.Drawing.Point(755, 173);
             this.cboPlayer.Name = "cboPlayer";
             this.cboPlayer.Size = new System.Drawing.Size(287, 25);
             this.cboPlayer.TabIndex = 110;
