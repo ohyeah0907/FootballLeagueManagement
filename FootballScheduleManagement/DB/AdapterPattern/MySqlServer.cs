@@ -102,7 +102,7 @@ namespace FootballScheduleManagement.DB.AdapterPattern
                 }
                 mySqlCommand.Connection = conn;
                 OpenConnection();
-                rowsAffect = sqlCommand.ExecuteNonQuery();
+                rowsAffect = mySqlCommand.ExecuteNonQuery();
                 CloseConnection();
             }
             catch (Exception e)
