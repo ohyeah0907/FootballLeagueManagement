@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,6 +19,7 @@ namespace FootballScheduleManagement.DB.AdapterPattern
 
         MySqlConnection conn;
         MySqlDataAdapter sqlDataAdapter;
+        MySqlCommand mySqlCommand;
         public MySqlConnection getConnection
         {
             get { return conn; }
@@ -26,6 +28,7 @@ namespace FootballScheduleManagement.DB.AdapterPattern
         public MySqlServer()
         {
             conn = new MySqlConnection();
+            mySqlCommand = new MySqlCommand();
             conn.ConnectionString = connectionString;
         }
 
@@ -50,9 +53,23 @@ namespace FootballScheduleManagement.DB.AdapterPattern
             DataSet dataSet = new DataSet();
             try
             {
-                sqlCommand.Connection = conn;
+                mySqlCommand.Parameters.Clear();
+                mySqlCommand.CommandText = sqlCommand.CommandText;
+                //Get parameters of sqlCommand and add it to mySqlCommand.Parameters
+                object[] parameterOfSqlcommand = new object[sqlCommand.Parameters.Count];
+                sqlCommand.Parameters.CopyTo(parameterOfSqlcommand, 0);
+                string[] parameterOfMysql = new string[sqlCommand.Parameters.Count];
+                for (int i = 0; i < parameterOfSqlcommand.Length; i++)
+                {
+                    parameterOfMysql[i] = parameterOfSqlcommand[i].ToString();
+                }
+                for (int i = 0; i < parameterOfMysql.Length; i++)
+                {
+                    mySqlCommand.Parameters.AddWithValue(parameterOfMysql[i], sqlCommand.Parameters[i].Value);
+                }
+                mySqlCommand.Connection = conn;
                 OpenConnection();
-                sqlDataAdapter = new MySqlDataAdapter((MySqlCommand)sqlCommand);
+                sqlDataAdapter = new MySqlDataAdapter(mySqlCommand);
                 sqlDataAdapter.Fill(dataSet);
                 CloseConnection();
             }
@@ -69,7 +86,21 @@ namespace FootballScheduleManagement.DB.AdapterPattern
             int rowsAffect = 0;
             try
             {
-                sqlCommand.Connection = conn;
+                mySqlCommand.Parameters.Clear();
+                mySqlCommand.CommandText = sqlCommand.CommandText;
+                //Get parameters of sqlCommand and add it to mySqlCommand.Parameters
+                object[] parameterOfSqlcommand = new object[sqlCommand.Parameters.Count];
+                sqlCommand.Parameters.CopyTo(parameterOfSqlcommand, 0);
+                string[] parameterOfMysql = new string[sqlCommand.Parameters.Count];
+                for (int i = 0; i < parameterOfSqlcommand.Length; i++)
+                {
+                    parameterOfMysql[i] = parameterOfSqlcommand[i].ToString();
+                }
+                for (int i = 0; i < parameterOfMysql.Length; i++)
+                {
+                    mySqlCommand.Parameters.AddWithValue(parameterOfMysql[i], sqlCommand.Parameters[i].Value);
+                }
+                mySqlCommand.Connection = conn;
                 OpenConnection();
                 rowsAffect = sqlCommand.ExecuteNonQuery();
                 CloseConnection();
